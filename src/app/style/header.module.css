@@ -1,0 +1,33 @@
+.header {
+  background-color: transparent; /* sfondo scuro */
+  color: var(--primary-color);
+  padding: 12px 0;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  margin-left: 40px;
+}
+
+.logo {
+  cursor: pointer;
+  display: block;
+}
+
+.link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--hover-color); /* effetto hover oro */
+}
