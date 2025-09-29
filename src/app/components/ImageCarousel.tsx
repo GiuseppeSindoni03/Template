@@ -2,9 +2,10 @@
 
 import { SlideData } from "@/types/slideData";
 import { Carousel } from "@mantine/carousel";
-import { Image, Box, Text, Stack } from "@mantine/core";
+import { Image, Box, Text, Title, Space } from "@mantine/core";
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
+import { dm_serif, roboto } from "../layout";
 
 type ImageCarouselProps = {
   images?: string[];
@@ -14,34 +15,35 @@ type ImageCarouselProps = {
 export default function ImageCarousel({ images, slides }: ImageCarouselProps) {
   const autoplay = useRef(Autoplay({ delay: 2500 }));
 
-  // Se vengono passate solo le immagini, convertile nel formato SlideData
   const slideData: SlideData[] =
     slides || images?.map((img) => ({ image: img })) || [];
 
   return (
     <Carousel
       plugins={[autoplay.current]}
-      // onMouseEnter={autoplay.current.stop}
-      // onMouseLeave={() => autoplay.current.play()}
       withIndicators
-      height={400}
+      w={"100%"}
       slideGap="md"
       emblaOptions={{ loop: true }}
+      style={{
+        height: "100%",
+      }}
     >
       {slideData.map((slide, index) => (
         <Carousel.Slide key={index}>
-          <Box pos="relative" h={400} w={""}>
-            {/* Immagine di sfondo */}
+          <Box>
             <Image
               src={slide.image}
               alt={`slide-${index}`}
               fit="cover"
-              h={400}
               radius="md"
+              h={"100vh"}
+              style={{
+                filter: "brightness(70%)",
+              }}
             />
 
-            {/* Overlay con logo e testo */}
-            {(slide.logo || slide.text) && (
+            {slide.text && (
               <Box
                 pos="absolute"
                 top={0}
@@ -50,42 +52,46 @@ export default function ImageCarousel({ images, slides }: ImageCarouselProps) {
                 bottom={0}
                 style={{
                   background:
-                    "linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.4) 100%)",
+                    "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, transparent 90%, transparent 70%, rgba(0,0,0,0.4) 100%)",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  justifyContent: "space-evenly",
-                  padding: "20px",
+                  justifyContent: "center",
+                  // padding: "20px",
                 }}
               >
                 {/* Logo in alto */}
-                {slide.logo && (
-                  <Box ta="center">
-                    <Image
-                      src={slide.logo}
-                      alt="logo"
-                      fit="contain"
-                      h={100}
-                      w="auto"
-                      mx="auto"
-                    />
+                {slide.title && (
+                  <Box>
+                    <Title
+                      order={3}
+                      size={"8rem"}
+                      c={"white"}
+                      ff={dm_serif.className}
+                      style={{
+                        textShadow: "0 2px 4px rgba(0,0,0,0.7)",
+                      }}
+                    >
+                      {slide.title}
+                    </Title>
                   </Box>
                 )}
 
                 {/* Testo in basso */}
                 {slide.text && (
                   <Box ta="center">
-                    <Text
+                    <Space h="xl" />
+                    <Title
+                      ff={dm_serif.className}
                       c="white"
-                      size="xl"
-                      fw={600}
+                      size="3em"
+                      order={3}
                       style={{
                         textShadow: "0 2px 4px rgba(0,0,0,0.7)",
-                        lineHeight: 1.3,
                       }}
                     >
-                      {slide.text.toUpperCase()}
-                    </Text>
+                      {slide.text}
+                    </Title>
                   </Box>
                 )}
               </Box>

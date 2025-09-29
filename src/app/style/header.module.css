@@ -1,19 +1,31 @@
 .header {
-  background-color: transparent; /* sfondo scuro */
-  color: var(--primary-color);
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 12px 0;
+  z-index: 10;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .inner {
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
+  /* border: 1px solid blue; */
 }
 
 .nav {
-  display: flex;
-  flex: 1;
-  justify-content: space-evenly;
   margin-left: 40px;
+  width: 100%;
+  /* border: 1px solid rgb(247, 0, 255); */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .logo {
@@ -22,12 +34,14 @@
 }
 
 .link {
-  color: var(--primary-color);
+  color: rgb(255, 255, 255);
   text-decoration: none;
+  font-size: 1.5rem;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .link:hover {
-  color: var(--hover-color); /* effetto hover oro */
+  color: var(--hover-color);
+  font-weight: 600;
 }

@@ -1,5 +1,5 @@
 export type SlideData = {
   image: string;
-  logo?: string;
+  title?: string;
   text?: string;
 };

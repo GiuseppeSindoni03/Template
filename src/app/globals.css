@@ -1,11 +1,12 @@
 :root {
-  --background: #fffff;
+  --ciao: "red";
   --mid-color: #beb7a4;
   --primary-color: #000;
-    --secondary-color: #2e2d2d9f;
-  --hover-color: gray
-
+  --secondary-color: #e3f2fd;
+  --hover-color: gray;
 
   --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --gradient-sunset: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+
+  --hover-color: gold;
 }

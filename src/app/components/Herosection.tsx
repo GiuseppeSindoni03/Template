@@ -1,6 +1,6 @@
 "use client";
 
-import { Container } from "@mantine/core";
+import { Box, Container } from "@mantine/core";
 import styles from "../style/herosection.module.css";
 import { Carousel } from "@mantine/carousel";
 import Image from "next/image";
@@ -16,11 +16,16 @@ type HeroParameter = {
 
 export default function HeroSection(heroParameter: HeroParameter) {
   return (
-    <Container className={styles.container}>
+    <Box
+      style={{
+        width: "100%",
+        height: "100vh",
+      }}
+    >
       <ImageCarousel
         slides={heroParameter.slides}
         images={heroParameter.images}
       />
-    </Container>
+    </Box>
   );
 }

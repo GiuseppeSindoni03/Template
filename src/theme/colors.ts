@@ -81,7 +81,10 @@ export const gradients = {
   forest: "linear-gradient(135deg, #134e5e 0%, #71b280 100%)",
   fire: "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
   royal: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-  minimal: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
+  minimal:
+    "linear-gradient(135deg,rgb(255, 255, 255) 0%,rgb(227, 157, 255) 100%)",
+  orange:
+    "linear-gradient(135deg,rgba(239, 173, 255, 0.95) 0%,rgb(241, 133, 32) 100%)",
 };
 
 // Colori semantici per diversi stati

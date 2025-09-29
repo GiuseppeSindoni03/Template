@@ -1,0 +1,66 @@
+.container {
+  /* Non mettere display: grid qui */
+  display: flex;
+  gap: var(--gap, 2rem);
+  padding: var(--pad, 2rem);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 300px;
+}
+
+/* Layout a riga (immagine + testo) */
+.row {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Riga invertita */
+.rowReverse {
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Layout a colonna (impilato) */
+.column {
+  flex-direction: column;
+  align-items: center; /* fa allargare i figli a 100% */
+  justify-content: center;
+}
+
+/* Regole sui figli: in riga prendono spazio fluido, con un minimo */
+.row > *,
+.rowReverse > * {
+  flex: 1 1 0;
+  min-width: 280px;
+}
+
+/* In colonna i figli occupano tutta la larghezza */
+.column > * {
+  width: 100%;
+}
+
+/* Responsivo: sotto 900px passa sempre a colonna */
+@media (max-width: 900px) {
+  .row,
+  .rowReverse {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+}
+
+/* contentSection.module.css */
+
+/* Aggiungi alla fine del file */
+.smoothTransition {
+  position: relative;
+  z-index: 1;
+}
+
+/* Opzionale: overlap per transizione ancora più fluida */
+.smoothTransition + .smoothTransition {
+  margin-top: -5vh; /* Sovrappone leggermente le sezioni */
+}
