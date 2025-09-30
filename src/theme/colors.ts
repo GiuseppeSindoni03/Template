@@ -2,6 +2,19 @@ import { MantineColorsTuple } from "@mantine/core";
 
 // Colori personalizzati che puoi aggiungere a Mantine
 export const customColors = {
+  template: [
+    "#FCBA04",
+    "#bbdefb",
+    "#90caf9",
+    "#64b5f6",
+    "#42a5f5",
+    "#2196f3", // Base color
+    "#1e88e5",
+    "#1976d2",
+    "#1565c0",
+    "#0d47a1",
+  ] as MantineColorsTuple,
+
   // Primary brand colors
   brand: [
     "#e3f2fd",

@@ -1,18 +1,20 @@
 import { Box, Image } from "@mantine/core";
 import styles from "../style/imageContainer.module.css";
 
-export function ImageContainer({
+export default function ImageContainer({
   className,
   style,
   src,
   imageAlt,
   size,
+  radius = "xl",
 }: {
   src: string;
   imageAlt: string;
   className?: string;
   style?: React.CSSProperties;
-  size: "sm" | "md" | "lg" | "xl";
+  size?: "sm" | "md" | "lg" | "xl";
+  radius?: string;
 }) {
   return (
     <Box
@@ -20,12 +22,12 @@ export function ImageContainer({
       style={style}
     >
       <Image
-        radius={"xl"}
+        radius={radius}
         src={src}
         alt={imageAlt}
         className={styles.image}
-        w={getImageWidth(size)}
-        h={1.5 * getImageWidth(size)}
+        w={size && getImageWidth(size)}
+        h={size && 1.5 * getImageWidth(size)}
       />
     </Box>
   );

@@ -1,16 +1,24 @@
 "use client";
 
-import { Box } from "@mantine/core";
+import { Box, Title } from "@mantine/core";
 import HeroSection from "./components/Herosection";
 import { SlideData } from "@/types/slideData";
 import ContentSection from "./components/ContentSection";
-import { gradients } from "@/theme/colors";
+import { customColors, gradients } from "@/theme/colors";
 
 import TextContent from "./components/TextContent";
-import { ImageContainer } from "./components/ImageContainer";
+import ImageContainer from "./components/ImageContainer";
 import NumberSection from "./components/NumberSection";
+import Interlude from "./components/Interlude";
+import { dm_serif } from "@/theme/fonts";
+import { color } from "motion/react";
+import { title } from "process";
 
 export default function LandingPage() {
+  const interlude = {
+    title: "Le nostre specialità",
+    src: "servizi.jpg",
+  };
   const chiSiamo = {
     image: "/chef.jpg",
     title: "Chi siamo",
@@ -51,24 +59,24 @@ export default function LandingPage() {
       backgroundColor: gradients.orange,
       imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     },
-    {
-      image: "/foto2.jpg",
-      title: "Cucina Gourmet",
-      content:
-        "La nostra cucina propone piatti innovativi che uniscono tradizione e creatività. Ingredienti freschi e tecniche moderne per un'esperienza gastronomica indimenticabile.",
-      orientation: "left" as const,
-      backgroundColor: gradients.minimal,
-      imageAlt: "Piatti gourmet della nostra cucina",
-    },
-    {
-      image: "/foto3.jpg",
-      title: "Ambiente Esclusivo",
-      content:
-        "Un'atmosfera unica e sofisticata dove ogni dettaglio è curato per offrirti un'esperienza di classe. Il luogo ideale per occasioni speciali e momenti indimenticabili.",
-      orientation: "right" as const,
-      backgroundColor: gradients.orange,
-      imageAlt: "Ambiente interno elegante e raffinato",
-    },
+    // {
+    //   image: "/foto2.jpg",
+    //   title: "Cucina Gourmet",
+    //   content:
+    //     "La nostra cucina propone piatti innovativi che uniscono tradizione e creatività. Ingredienti freschi e tecniche moderne per un'esperienza gastronomica indimenticabile.",
+    //   orientation: "left" as const,
+    //   backgroundColor: gradients.minimal,
+    //   imageAlt: "Piatti gourmet della nostra cucina",
+    // },
+    // {
+    //   image: "/foto3.jpg",
+    //   title: "Ambiente Esclusivo",
+    //   content:
+    //     "Un'atmosfera unica e sofisticata dove ogni dettaglio è curato per offrirti un'esperienza di classe. Il luogo ideale per occasioni speciali e momenti indimenticabili.",
+    //   orientation: "right" as const,
+    //   backgroundColor: gradients.orange,
+    //   imageAlt: "Ambiente interno elegante e raffinato",
+    // },
   ];
 
   const numberCards: NumberCardType[] = [
@@ -101,7 +109,7 @@ export default function LandingPage() {
         alignItems: "center",
         flexDirection: "column",
         justifyItems: "center",
-        border: "4px solid black",
+        // border: "4px solid black",
       }}
     >
       <HeroSection slides={slides} />
@@ -135,6 +143,27 @@ export default function LandingPage() {
           contentWeight={400}
         />
       </ContentSection>
+
+      <Interlude
+        imageSrc={interlude.src}
+        imageAlt="Descrizione immagine"
+        size="lg"
+        minHeight="500px"
+      >
+        <Title
+          order={6}
+          fw={700}
+          ff={dm_serif.className}
+          size="clamp(2rem, 6vw, 4rem)"
+          c={customColors.template[0]}
+          style={{
+            textShadow: "0 2px 8px rgba(0, 0, 0, 0.7);",
+            lineHeight: "1.2",
+          }}
+        >
+          {interlude.title}
+        </Title>
+      </Interlude>
 
       {contentSections.map((section, index) => (
         <ContentSection
