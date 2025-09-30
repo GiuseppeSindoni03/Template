@@ -1,5 +1,4 @@
 import { Box, Image } from "@mantine/core";
-import { ReactNode } from "react";
 import styles from "../style/imageContainer.module.css";
 
 export function ImageContainer({

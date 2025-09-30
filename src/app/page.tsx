@@ -1,16 +1,14 @@
 "use client";
 
-import { Box, Container, Space } from "@mantine/core";
+import { Box } from "@mantine/core";
 import HeroSection from "./components/Herosection";
 import { SlideData } from "@/types/slideData";
 import ContentSection from "./components/ContentSection";
-import { customColors, gradients } from "@/theme/colors";
-import { fontFamilies } from "@/theme/fonts";
-import NumberSection from "./components/NumberSection";
+import { gradients } from "@/theme/colors";
+
 import TextContent from "./components/TextContent";
 import { ImageContainer } from "./components/ImageContainer";
-import ContentWrapper from "./components/ContentWrapper";
-import { dm_serif, inter, roboto } from "./layout";
+import NumberSection from "./components/NumberSection";
 
 export default function LandingPage() {
   const chiSiamo = {
@@ -24,17 +22,20 @@ export default function LandingPage() {
   };
   const slides: SlideData[] = [
     {
-      image: "/foto1.jpg",
+      id: "hero-1",
+      src: "/foto1.jpg",
       title: "Il gusto di stare insieme",
       text: "Dal 1999 al vostro servizio",
     },
     {
-      image: "/foto2.jpg",
+      id: "hero-2",
+      src: "/foto2.jpg",
       title: "Tradizione e sapori",
       text: "Dal 1999 al vostro servizio",
     },
     {
-      image: "/foto3.jpg",
+      id: "hero-3",
+      src: "/foto3.jpg",
       title: "Tutto quello che cerchi",
       text: "Dal 1999 al vostro servizio",
     },
@@ -94,51 +95,65 @@ export default function LandingPage() {
   return (
     <Box
       style={{
-        background: "var(--ciao)",
         minHeight: "100vh",
         width: "100%",
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
-        justifyContent: "normal",
-        // border: "1px solid red",
+        justifyItems: "center",
+        border: "4px solid black",
       }}
     >
       <HeroSection slides={slides} />
 
-      <ContentSection backgroundColor={gradients.minimal}>
+      <ContentSection
+        as="section"
+        id="chi-siamo"
+        ariaLabel="Sezione Chi siamo"
+        orientation={chiSiamo.orientation} // 'left'
+        // background={chiSiamo.backgroundColor} // se è un gradiente, usa 'background'
+        maxWidth={1200}
+        padding="3rem"
+        gap="2rem"
+        minHeight="60vh"
+        backgroundColor={gradients.minimal}
+        // border="1px solid blue"
+      >
         <ImageContainer
           src={chiSiamo.image}
           imageAlt={chiSiamo.imageAlt}
           size="lg"
+          style={{ maxWidth: 520, width: "100%" }}
         />
-
-        <Space w={"sm"} />
 
         <TextContent
           title={chiSiamo.title}
           content={chiSiamo.content}
-          contentSize="1.5em"
-          titleSize="5em"
+          titleSize="clamp(2rem, 6vw, 4rem)"
+          contentSize="clamp(1rem, 2.2vw, 1.2rem)"
           titleWeight={700}
           contentWeight={400}
         />
-        {/* </ContentWrapper> */}
       </ContentSection>
 
       {contentSections.map((section, index) => (
         <ContentSection
+          as="section"
+          id={section.title}
+          ariaLabel={section.title}
           key={index}
           orientation={section.orientation}
           backgroundColor={section.backgroundColor}
-          gap="3rem"
-          padding="4rem 2rem"
+          maxWidth={1200}
+          padding="3rem"
+          gap="2rem"
+          minHeight="60vh"
         >
           <ImageContainer
             src={section.image}
             imageAlt={section.imageAlt}
             size="lg"
-            className=""
+            style={{ maxWidth: 520, width: "100%" }}
           />
 
           <TextContent
@@ -152,13 +167,13 @@ export default function LandingPage() {
         </ContentSection>
       ))}
 
-      <ContentSection
-        height={"50vh"}
-        orientation="multi"
+      {/* <ContentSection
+        as="section"
+        orientation="column"
         backgroundColor={gradients.minimal}
       >
         <NumberSection numbers={numberCards} />
-      </ContentSection>
+      </ContentSection> */}
     </Box>
   );
 }

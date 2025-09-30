@@ -1,7 +1,7 @@
 // TextContent.tsx
 import { Box, Title, Text } from "@mantine/core";
 import styles from "../style/TextContent.module.css";
-import { dm_serif, inter } from "../layout";
+import { dm_serif, inter } from "../../theme/fonts";
 
 type TextContentProps = {
   title: string;

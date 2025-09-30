@@ -1,31 +1,24 @@
 "use client";
 
-import { Box, Container } from "@mantine/core";
-import styles from "../style/herosection.module.css";
-import { Carousel } from "@mantine/carousel";
-import Image from "next/image";
+import { Box } from "@mantine/core";
 import ImageCarousel from "./ImageCarousel";
-import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
 import { SlideData } from "@/types/slideData";
 
 type HeroParameter = {
-  images?: string[];
-  slides?: SlideData[];
+  slides: SlideData[];
 };
 
 export default function HeroSection(heroParameter: HeroParameter) {
   return (
     <Box
+      component="section"
       style={{
         width: "100%",
-        height: "100vh",
+        position: "relative",
+        // border: "1px solid black",
       }}
     >
-      <ImageCarousel
-        slides={heroParameter.slides}
-        images={heroParameter.images}
-      />
+      <ImageCarousel slides={heroParameter.slides} />
     </Box>
   );
 }

@@ -4,95 +4,93 @@ import { SlideData } from "@/types/slideData";
 import { Carousel } from "@mantine/carousel";
 import { Image, Box, Text, Title, Space } from "@mantine/core";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
-import { dm_serif, roboto } from "../layout";
+import { useEffect, useRef, useState } from "react";
+import { dm_serif } from "../../theme/fonts";
+import styles from "../style/imageCarousel.module.css";
+import { IconArrowRight, IconArrowLeft } from "@tabler/icons-react";
 
 type ImageCarouselProps = {
-  images?: string[];
   slides?: SlideData[];
 };
 
-export default function ImageCarousel({ images, slides }: ImageCarouselProps) {
-  const autoplay = useRef(Autoplay({ delay: 2500 }));
+export default function ImageCarousel({ slides }: ImageCarouselProps) {
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
-  const slideData: SlideData[] =
-    slides || images?.map((img) => ({ image: img })) || [];
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const autoplay = useRef(
+    Autoplay({
+      delay: isMobile ? 3500 : 2500,
+      stopOnInteraction: true,
+    })
+  );
+
+  const shouldShowControls = isMobile === null ? true : !isMobile;
+
+  // Se non ci sono slide, non renderizzare nulla
+  if (!slides || slides.length === 0) {
+    return null;
+  }
 
   return (
     <Carousel
       plugins={[autoplay.current]}
-      withIndicators
-      w={"100%"}
+      w="100%"
       slideGap="md"
       emblaOptions={{ loop: true }}
-      style={{
-        height: "100%",
-      }}
+      className={styles.carousel} //gold
+      withControls={shouldShowControls}
+      withIndicators
+      // nextControlIcon={<IconArrowRight size={40} color="white" />}
+      // previousControlIcon={<IconArrowLeft size={40} />}
+      classNames={{ control: styles.control }}
     >
-      {slideData.map((slide, index) => (
-        <Carousel.Slide key={index}>
-          <Box>
+      {slides.map((slide, index) => (
+        <Carousel.Slide key={slide.id || `slide-${index}`}>
+          <Box className={styles.slideContainer}>
             <Image
-              src={slide.image}
-              alt={`slide-${index}`}
+              src={slide.src}
+              alt={slide.alt || slide.title || `Slide ${index + 1}`}
               fit="cover"
-              radius="md"
-              h={"100vh"}
-              style={{
-                filter: "brightness(70%)",
-              }}
+              // radius="md"
+              className={styles.slideImage}
             />
 
-            {slide.text && (
-              <Box
-                pos="absolute"
-                top={0}
-                left={0}
-                right={0}
-                bottom={0}
-                style={{
-                  background:
-                    "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, transparent 90%, transparent 70%, rgba(0,0,0,0.4) 100%)",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  // padding: "20px",
-                }}
-              >
-                {/* Logo in alto */}
+            {/* Overlay con testo - mostra solo se c'è title o text */}
+            {(slide.title || slide.text) && (
+              <Box className={styles.overlay}>
                 {slide.title && (
-                  <Box>
-                    <Title
-                      order={3}
-                      size={"8rem"}
-                      c={"white"}
-                      ff={dm_serif.className}
-                      style={{
-                        textShadow: "0 2px 4px rgba(0,0,0,0.7)",
-                      }}
-                    >
-                      {slide.title}
-                    </Title>
-                  </Box>
+                  <Title
+                    order={1}
+                    c="white"
+                    // ff={dm_serif.className}
+                    // className={styles.mainTitle}
+                    className={`${styles.mainTitle} ${dm_serif.className}`}
+                  >
+                    {slide.title}
+                  </Title>
                 )}
 
-                {/* Testo in basso */}
                 {slide.text && (
-                  <Box ta="center">
-                    <Space h="xl" />
+                  <>
+                    {slide.title && <Space h="xl" />}
                     <Title
-                      ff={dm_serif.className}
+                      order={2}
                       c="white"
-                      size="3em"
-                      order={3}
-                      style={{
-                        textShadow: "0 2px 4px rgba(0,0,0,0.7)",
-                      }}
+                      className={`${styles.subTitle} ${dm_serif.className}`}
                     >
                       {slide.text}
                     </Title>
-                  </Box>
+                  </>
                 )}
               </Box>
             )}
