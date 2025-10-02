@@ -18,6 +18,7 @@
   align-items: center;
   justify-content: space-evenly;
 }
+
 /* Riga invertita */
 .rowReverse {
   flex-direction: row-reverse;
@@ -25,16 +26,50 @@
   justify-content: space-evenly;
 }
 
-.rowReverse {
-  flex-direction: row-reverse;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
+/* Layout a colonna */
 .column {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/* Layout scroll orizzontale */
+.horizontalScroll {
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+  min-height: auto;
+  /* Nasconde scrollbar su desktop per un look più pulito */
+}
+
+.horizontalScroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontalScroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.horizontalScroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.horizontalScroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Le card nello scroll orizzontale non devono crescere */
+.horizontalScroll > * {
+  flex: 0 0 auto;
+  max-width: 380px;
+  min-width: 280px;
 }
 
 .row > *,
@@ -47,6 +82,29 @@
   width: 100%;
 }
 
+/* Desktop: mantieni scroll orizzontale */
+@media (min-width: 769px) {
+  .horizontalScroll {
+    /* Su desktop, nasconde completamente la scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .horizontalScroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Mostra scrollbar solo on hover per dare feedback visivo */
+  .horizontalScroll:hover {
+    scrollbar-width: thin;
+  }
+
+  .horizontalScroll:hover::-webkit-scrollbar {
+    display: block;
+  }
+}
+
+/* Tablet: converti layout row in column */
 @media (max-width: 1024px) {
   .row,
   .rowReverse {
@@ -61,5 +119,38 @@
   }
 }
 
+/* Mobile: scroll orizzontale nativo, scrollbar sempre visibile */
 @media (max-width: 768px) {
+  .horizontalScroll {
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.1);
+  }
+
+  .horizontalScroll::-webkit-scrollbar {
+    display: block;
+    height: 6px;
+  }
+
+  .horizontalScroll::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+  }
+
+  .horizontalScroll::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+  }
+
+  .horizontalScroll > * {
+    min-width: 260px;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .horizontalScroll > * {
+    min-width: 240px;
+    max-width: 280px;
+  }
 }

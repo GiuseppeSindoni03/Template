@@ -19,7 +19,9 @@ import {
   interlude,
   numberCards,
   slides,
+  specialty,
 } from "@/mock/mock";
+import { CardSpecialty } from "./components/CardSpecialty";
 
 export default function LandingPage() {
   return (
@@ -87,36 +89,23 @@ export default function LandingPage() {
         </Title>
       </Interlude>
 
-      {contentSections.map((section, index) => (
-        <ContentSection
-          as="section"
-          id={section.title}
-          ariaLabel={section.title}
-          key={index}
-          orientation={section.orientation}
-          backgroundColor={section.backgroundColor}
-          maxWidth={1200}
-          padding="3rem"
-          gap="2rem"
-          minHeight="60vh"
-        >
-          <ImageContainer
-            src={section.image}
-            imageAlt={section.imageAlt}
-            size="lg"
-            style={{ maxWidth: 520, width: "100%" }}
+      <ContentSection
+        as="section"
+        // backgroundColor={specialty.backgroundColor}
+        maxWidth={1200}
+        gap="1.5rem"
+        padding="2rem"
+        orientation="horizontal-scroll"
+      >
+        {specialty.map((spec, index) => (
+          <CardSpecialty
+            key={index}
+            src={spec.src}
+            title={spec.title}
+            content={spec.content}
           />
-
-          <TextContent
-            title={section.title.toUpperCase()}
-            content={section.content}
-            contentSize="lg"
-            titleSize="h1"
-            titleWeight={700}
-            contentWeight={400}
-          />
-        </ContentSection>
-      ))}
+        ))}
+      </ContentSection>
 
       <ContentSection
         as="section"

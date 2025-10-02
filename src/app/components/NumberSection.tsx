@@ -1,6 +1,6 @@
 import { Box, Space, Title } from "@mantine/core";
 import NumberCard from "./NumberCard";
-import { inter } from "../../theme/fonts";
+import { dm_serif, inter } from "../../theme/fonts";
 import styles from "../style/numberSection.module.css";
 
 type NumberSectionProps = {
@@ -10,14 +10,17 @@ type NumberSectionProps = {
 export default function NumberSection(props: NumberSectionProps) {
   return (
     <Box className={styles.container}>
-      <Title
-        className={styles.title}
-        order={6}
-        size={"clamp(4em, 3vh, 5em) "}
-        ff={inter.className}
-      >
-        Il nostro percorso in numeri fino ad oggi
-      </Title>
+      <div className={styles.titleContainer}>
+        <Title
+          className={styles.title}
+          order={6}
+          size={"clamp(4em, 3vh, 5em) "}
+          ff={dm_serif.className}
+          ta={"center"}
+        >
+          Il nostro percorso in numeri fino ad oggi
+        </Title>
+      </div>
 
       <Space h={"xl"} />
 

@@ -8,12 +8,14 @@ export default function ImageContainer({
   imageAlt,
   size,
   radius = "xl",
+  rateo = 1.5,
 }: {
   src: string;
   imageAlt: string;
   className?: string;
   style?: React.CSSProperties;
   size?: "sm" | "md" | "lg" | "xl";
+  rateo?: number;
   radius?: string;
 }) {
   return (
@@ -27,7 +29,7 @@ export default function ImageContainer({
         alt={imageAlt}
         className={styles.image}
         w={size && getImageWidth(size)}
-        h={size && 1.5 * getImageWidth(size)}
+        h={size && rateo * getImageWidth(size)}
       />
     </Box>
   );

@@ -36,6 +36,130 @@ export const numberCards: NumberCardType[] = [
   // },
 ];
 
+export const specialty = [
+  {
+    backgroundColor: gradients.orange,
+    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+    src: "/foto4.jpeg",
+    title: "Cappuccino caldo",
+    content:
+      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  },
+
+  {
+    backgroundColor: gradients.orange,
+    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+    src: "/foto4.jpeg",
+    title: "Cappuccino caldo",
+    content:
+      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  },
+  {
+    backgroundColor: gradients.orange,
+    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+    src: "/foto4.jpeg",
+    title: "Cappuccino caldo",
+    content:
+      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  },
+  {
+    backgroundColor: gradients.orange,
+    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+    src: "/foto4.jpeg",
+    title: "Cappuccino caldo",
+    content:
+      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  },
+  {
+    backgroundColor: gradients.orange,
+    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+    src: "/foto4.jpeg",
+    title: "Cappuccino caldo",
+    content:
+      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  },
+  {
+    backgroundColor: gradients.orange,
+    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+    src: "/foto4.jpeg",
+    title: "Cappuccino caldo",
+    content:
+      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  },
+  {
+    backgroundColor: gradients.orange,
+    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+    src: "/foto4.jpeg",
+    title: "Cappuccino caldo",
+    content:
+      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  },
+  {
+    backgroundColor: gradients.orange,
+    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+    src: "/foto4.jpeg",
+    title: "Cappuccino caldo",
+    content:
+      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  },
+  {
+    backgroundColor: gradients.orange,
+    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+    src: "/foto4.jpeg",
+    title: "Cappuccino caldo",
+    content:
+      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  },
+  {
+    backgroundColor: gradients.orange,
+    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+    src: "/foto4.jpeg",
+    title: "Cappuccino caldo",
+    content:
+      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  },
+  {
+    backgroundColor: gradients.orange,
+    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+    src: "/foto4.jpeg",
+    title: "Cappuccino caldo",
+    content:
+      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  },
+  {
+    backgroundColor: gradients.orange,
+    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+    src: "/foto4.jpeg",
+    title: "Cappuccino caldo",
+    content:
+      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  },
+  {
+    backgroundColor: gradients.orange,
+    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+    src: "/foto4.jpeg",
+    title: "Cappuccino caldo",
+    content:
+      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  },
+
+  {
+    backgroundColor: gradients.orange,
+    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+    src: "/foto4.jpeg",
+    title: "Cappuccino caldo",
+    content:
+      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  },
+  {
+    backgroundColor: gradients.orange,
+    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+    src: "/foto4.jpeg",
+    title: "Cappuccino caldo",
+    content:
+      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  },
+];
 export const contentSections = [
   {
     image: "/foto1.jpg",

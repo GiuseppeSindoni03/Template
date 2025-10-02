@@ -19,6 +19,12 @@
   gap: 4em;
 }
 
+.titleContainer {
+  /* border: 1px solid red; */
+  /* font: var(--font-inter); */
+  width: 100%;
+}
+
 @media (max-width: 1024px) {
   .title {
     font-size: 3.5em;
