@@ -1,11 +1,16 @@
-import { Box, Card, Text, Title } from "@mantine/core";
+import { Box, Card, Space, Text, Title } from "@mantine/core";
 import CountUp from "./CountUp";
+import styles from "../style/numberCard.module.css";
 
 type NumberCardProps = {
   symbol?: string;
   from: number;
   to: number;
   label: string;
+  padding?: string | number;
+  gap?: string | number;
+  maxWidth?: string | number;
+  minHeight?: string | number;
 };
 
 export default function NumberCard(props: NumberCardProps) {
@@ -15,44 +20,41 @@ export default function NumberCard(props: NumberCardProps) {
       padding="xl"
       radius="lg"
       withBorder
-      w={300}
-      h={200}
-      style={{
-        boxShadow: "0 10px 30px rgba(0,0,0,0.4)", // più grande e più scura
-      }}
+      className={styles.card}
     >
-      <Card.Section h={300}>
-        <Box
-          style={{
-            // border: "1px solid red",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            height: "100%",
-          }}
-        >
-          <Text size="3em" fw={900}>
-            {props.symbol}
-          </Text>
-          <Title order={6} size={"4em"} fw={900}>
-            <CountUp from={props.from} to={props.to} />
+      <Box className={styles.container}>
+        <Card.Section>
+          <Box className={styles.section}>
+            <Text
+              className={styles.symbol}
+              size="clamp(0.875rem, 2.5vw, 2rem)"
+              fw={900}
+            >
+              {props.symbol}
+            </Text>
+
+            <Title
+              className={styles.label}
+              order={6}
+              size="clamp(2.5em, 5vw, 4rem)"
+              fw={900}
+            >
+              <CountUp from={props.from} to={props.to} />
+            </Title>
+          </Box>
+        </Card.Section>
+
+        <Box className={styles.labelContainer}>
+          <Title
+            order={6}
+            className={styles.labelText}
+            size="clamp(2em, 3vw, 1.25rem)"
+            fw={900}
+            ta="center"
+          >
+            {props.label}
           </Title>
         </Box>
-      </Card.Section>
-
-      <Box
-        style={{
-          // border: "1px solid red",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "100%",
-          height: "100%",
-        }}
-      >
-        <Text size="1.5em" fw={900}>
-          {props.label}
-        </Text>
       </Box>
     </Card>
   );

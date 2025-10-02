@@ -50,8 +50,6 @@ export default function ImageCarousel({ slides }: ImageCarouselProps) {
       className={styles.carousel} //gold
       withControls={shouldShowControls}
       withIndicators
-      // nextControlIcon={<IconArrowRight size={40} color="white" />}
-      // previousControlIcon={<IconArrowLeft size={40} />}
       classNames={{ control: styles.control }}
     >
       {slides.map((slide, index) => (
@@ -72,8 +70,6 @@ export default function ImageCarousel({ slides }: ImageCarouselProps) {
                   <Title
                     order={1}
                     c="white"
-                    // ff={dm_serif.className}
-                    // className={styles.mainTitle}
                     className={`${styles.mainTitle} ${dm_serif.className}`}
                   >
                     {slide.title}

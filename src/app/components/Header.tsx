@@ -6,6 +6,7 @@ import styles from "../style/header.module.css";
 import Image from "next/image";
 import { roboto } from "../../theme/fonts";
 import { useState, useEffect } from "react";
+import { link } from "fs";
 
 type HeaderProps = {
   logo: string;
@@ -15,12 +16,15 @@ type HeaderProps = {
 const links = [
   {
     label: "Chi siamo",
+    link: "/",
   },
   {
     label: "Contatti",
+    link: "/",
   },
   {
     label: "Servizi",
+    link: "/servizi",
   },
 ];
 
@@ -84,7 +88,7 @@ export default function Header(props: HeaderProps) {
           {links.map((link, index) => (
             <Link
               key={index}
-              href={`/`}
+              href={link.link}
               className={`${styles.link} ${roboto.className}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
