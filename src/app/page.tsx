@@ -2,7 +2,6 @@
 
 import { Box, Title } from "@mantine/core";
 import HeroSection from "./components/Herosection";
-import { SlideData } from "@/types/slideData";
 import ContentSection from "./components/ContentSection";
 import { customColors, gradients } from "@/theme/colors";
 
@@ -10,18 +9,18 @@ import TextContent from "./components/TextContent";
 import ImageContainer from "./components/ImageContainer";
 import NumberSection from "./components/NumberSection";
 import Interlude from "./components/Interlude";
-import { dm_serif } from "@/theme/fonts";
-import { color } from "motion/react";
-import { title } from "process";
+import { dm_serif, inter } from "@/theme/fonts";
+import styles from "./page.module.css";
 import {
   chiSiamo,
-  contentSections,
   interlude,
   numberCards,
   slides,
   specialty,
+  footerInfo,
 } from "@/mock/mock";
 import { CardSpecialty } from "./components/CardSpecialty";
+import GoogleMap from "./components/GoogleMap";
 
 export default function LandingPage() {
   return (
@@ -114,6 +113,54 @@ export default function LandingPage() {
       >
         <NumberSection numbers={numberCards} />
       </ContentSection>
+
+      <Interlude
+        maxWidth={"1900px"}
+        backgroundColor="#FCBA04"
+        size="lg"
+        minHeight="150px"
+      >
+        <Box
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            padding: "5%",
+            // border: "1px solid red",
+            maxLines: 1,
+          }}
+        >
+          <Title
+            order={6}
+            fw={700}
+            ff={dm_serif.className}
+            size="clamp(2em, 4vw, 4rem)"
+            c={"#293132"}
+            style={{
+              textShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+              lineHeight: "1.2",
+            }}
+          >
+            Dove trovarci
+          </Title>
+          <Title
+            order={2}
+            fw={400}
+            className={`${inter.className} ${styles.address}`}
+            size="clamp(1rem, 2vw, 2rem)"
+            c={"white"}
+            style={{
+              textShadow: "0 2px 8px rgba(0, 0, 0, 0.3)",
+            }}
+          >
+            Via Porricelli 83, Napoli 80048
+          </Title>
+        </Box>
+      </Interlude>
+
+      <GoogleMap />
     </Box>
   );
 }

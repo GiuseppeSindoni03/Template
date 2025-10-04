@@ -10,3 +10,9 @@
 
   --hover-color: gold;
 }
+
+.link {
+  &:hover {
+    text-decoration: underline;
+  }
+}

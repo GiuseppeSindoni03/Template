@@ -1,0 +1,9 @@
+.address {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .address {
+    display: none;
+  }
+}

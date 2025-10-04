@@ -89,7 +89,7 @@ export default function Header(props: HeaderProps) {
             <Link
               key={index}
               href={link.link}
-              className={`${styles.link} ${roboto.className}`}
+              className={`${styles.link} ${roboto.className} link`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.label}

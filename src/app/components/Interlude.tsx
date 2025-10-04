@@ -21,8 +21,8 @@ type InterludeProps = {
   gap?: string | number;
   maxWidth?: string | number;
   minHeight?: string | number;
-  imageSrc: string;
-  imageAlt: string;
+  imageSrc?: string;
+  imageAlt?: string;
   className?: string;
   style?: React.CSSProperties;
   size?: "sm" | "md" | "lg" | "xl";
@@ -35,6 +35,7 @@ type InterludeProps = {
     mobile?: { padding?: string | number; gap?: string | number };
     small?: { padding?: string | number; gap?: string | number };
   };
+  backgroundColor?: string;
 };
 
 export default function Interlude({
@@ -52,6 +53,7 @@ export default function Interlude({
   overlayColor = "rgba(0, 0, 0, 0.3)",
   overlayOpacity = 0.3,
   responsive,
+  backgroundColor = "white",
 }: InterludeProps) {
   const cssVars: CSSVarProps = {
     "--cs-gap": typeof gap === "number" ? `${gap}px` : gap,
@@ -117,18 +119,30 @@ export default function Interlude({
     >
       {/* Immagine di sfondo */}
       <Box className={styles.backgroundImage}>
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-          }}
-        />
+        {imageSrc && (
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        )}
+
+        {backgroundColor && (
+          <Box
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              backgroundColor: backgroundColor,
+            }}
+          />
+        )}
       </Box>
 
-      {/* Overlay opzionale */}
       {overlay && (
         <Box
           className={styles.overlay}

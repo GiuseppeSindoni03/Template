@@ -1,6 +1,7 @@
 import { Box, Card, Space, Text, Title } from "@mantine/core";
 import CountUp from "./CountUp";
 import styles from "../style/numberCard.module.css";
+import { dm_serif } from "@/theme/fonts";
 
 type NumberCardProps = {
   symbol?: string;
@@ -36,7 +37,7 @@ export default function NumberCard(props: NumberCardProps) {
             <Title
               className={styles.label}
               order={6}
-              size="clamp(2.5em, 5vw, 4rem)"
+              size="clamp(4em, 5vw, 4rem)"
               fw={900}
             >
               <CountUp from={props.from} to={props.to} />
@@ -48,8 +49,9 @@ export default function NumberCard(props: NumberCardProps) {
           <Title
             order={6}
             className={styles.labelText}
+            ff={dm_serif.className}
             size="clamp(2em, 3vw, 1.25rem)"
-            fw={900}
+            fw={500}
             ta="center"
           >
             {props.label}

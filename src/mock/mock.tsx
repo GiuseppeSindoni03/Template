@@ -1,3 +1,4 @@
+import { FooterProps } from "@/app/components/FooterLinks";
 import { gradients } from "@/theme/colors";
 import { SlideData } from "@/types/slideData";
 
@@ -34,6 +35,36 @@ export const numberCards: NumberCardType[] = [
   //   to: 92,
   //   symbol: "+",
   // },
+];
+
+export const services = [
+  {
+    image: "/party.jpg",
+    title: "Festeggia con noi",
+    content:
+      "Che sia un compleanno, un anniversario o una serata speciale, da noi trovi l’atmosfera giusta per ogni occasione. Organizziamo eventi su misura con allestimenti, menu personalizzati e tutta la cura per rendere il tuo giorno davvero unico.",
+    orientation: "left" as const,
+    backgroundColor: gradients.orange,
+    imageAlt: "party",
+  },
+  {
+    image: "/delivery.jpg",
+    title: "Gustaci anche a casa",
+    content:
+      "Che sia un compleanno, un anniversario o una serata speciale, da noi trovi l’atmosfera giusta per ogni occasione. Organizziamo eventi su misura con allestimenti, menu personalizzati e tutta la cura per rendere il tuo giorno davvero unico.",
+    orientation: "right" as const,
+    backgroundColor: gradients.orange,
+    imageAlt: "delivery",
+  },
+  {
+    image: "/kidArea.jpg",
+    title: "Ai bambini ci pensiamo noi",
+    content:
+      "Che sia un compleanno, un anniversario o una serata speciale, da noi trovi l’atmosfera giusta per ogni occasione. Organizziamo eventi su misura con allestimenti, menu personalizzati e tutta la cura per rendere il tuo giorno davvero unico.",
+    orientation: "left" as const,
+    backgroundColor: gradients.orange,
+    imageAlt: "party",
+  },
 ];
 
 export const specialty = [
@@ -205,6 +236,14 @@ export const chiSiamo = {
   imageAlt: "Chi siamo",
 };
 
+export const servicesSlide: SlideData[] = [
+  {
+    id: "hero-1",
+    src: "/servizi1.jpg",
+    title: "I nostri servizi",
+  },
+];
+
 export const slides: SlideData[] = [
   {
     id: "hero-1",
@@ -225,3 +264,33 @@ export const slides: SlideData[] = [
     text: "Dal 1999 al vostro servizio",
   },
 ];
+
+export const footerInfo: FooterProps = {
+  logo: "logoIpsumBlack.svg",
+  address: "Via Porricelli 83, Napoli",
+  email: "giuseppesindoni@hotmail.com",
+  phone: "3509702659",
+  social: {
+    tiktok:
+      "https://www.youtube.com/watch?v=PdSXbJboYKE&list=RDPdSXbJboYKE&start_radio=1",
+    facebook:
+      "https://www.youtube.com/watch?v=PdSXbJboYKE&list=RDPdSXbJboYKE&start_radio=1",
+    instagram:
+      "https://www.youtube.com/watch?v=PdSXbJboYKE&list=RDPdSXbJboYKE&start_radio=1",
+  },
+  workSchedule: [
+    "Giorno di chiusura",
+    "7:00 - 01:00",
+    "7:00 - 01:00",
+    "7:00 - 01:00",
+    "7:00 - 01:00",
+    "7:00 - 01:00",
+    "7:00 - 01:00",
+  ],
+  links: [
+    { link: "/", label: "Home" },
+    { link: "/", label: "Specialità" },
+    { link: "/", label: "Dove trovarci" },
+    { link: "/", label: "Servizi" },
+  ],
+};

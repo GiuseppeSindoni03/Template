@@ -34,7 +34,8 @@ export default function ImageCarousel({ slides }: ImageCarouselProps) {
     })
   );
 
-  const shouldShowControls = isMobile === null ? true : !isMobile;
+  const shouldShowControls =
+    isMobile === null ? true : !isMobile && slides?.length && slides.length > 1;
 
   // Se non ci sono slide, non renderizzare nulla
   if (!slides || slides.length === 0) {
@@ -49,8 +50,8 @@ export default function ImageCarousel({ slides }: ImageCarouselProps) {
       emblaOptions={{ loop: true }}
       className={styles.carousel} //gold
       withControls={shouldShowControls}
-      withIndicators
-      classNames={{ control: styles.control }}
+      withIndicators={true}
+      classNames={{ control: styles.control, indicator: styles.indicator }}
     >
       {slides.map((slide, index) => (
         <Carousel.Slide key={slide.id || `slide-${index}`}>

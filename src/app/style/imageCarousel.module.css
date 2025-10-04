@@ -38,6 +38,11 @@
   text-align: center;
 }
 
+.indicator {
+  z-index: 1000;
+  border: 3px solid rgb(255, 255, 255);
+}
+
 .mainTitle {
   font-size: clamp(2.5rem, 8vw, 8rem);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
