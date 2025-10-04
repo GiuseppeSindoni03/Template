@@ -35,7 +35,9 @@ export default function ImageCarousel({ slides }: ImageCarouselProps) {
   );
 
   const shouldShowControls =
-    isMobile === null ? true : !isMobile && slides?.length && slides.length > 1;
+    isMobile === null
+      ? true
+      : !isMobile && !!slides?.length && slides.length > 1;
 
   // Se non ci sono slide, non renderizzare nulla
   if (!slides || slides.length === 0) {
