@@ -17,7 +17,6 @@ import {
   numberCards,
   slides,
   specialty,
-  footerInfo,
 } from "@/mock/mock";
 import { CardSpecialty } from "./components/CardSpecialty";
 import GoogleMap from "./components/GoogleMap";

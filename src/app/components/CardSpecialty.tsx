@@ -1,6 +1,5 @@
-import { Box, Card, Text, Title, Image, Stack } from "@mantine/core";
+import { Card, Text, Title, Image, Stack } from "@mantine/core";
 import styles from "../style/cardSpecialty.module.css";
-import ImageContainer from "./ImageContainer";
 
 type CardProps = {
   title: string;

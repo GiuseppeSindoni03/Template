@@ -2,7 +2,7 @@
 
 import { Box } from "@mantine/core";
 import HeroSection from "../components/Herosection";
-import { chiSiamo, services, servicesSlide } from "@/mock/mock";
+import { services, servicesSlide } from "@/mock/mock";
 import ContentSection from "../components/ContentSection";
 import ImageContainer from "../components/ImageContainer";
 import { gradients } from "@/theme/colors";
@@ -25,6 +25,7 @@ export default function Page() {
 
       {services.map((service, index) => (
         <ContentSection
+          key={index}
           as="section"
           id={index.toString()}
           ariaLabel=""

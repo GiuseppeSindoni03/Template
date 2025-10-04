@@ -1,4 +1,4 @@
-import { Box, Card, Space, Text, Title } from "@mantine/core";
+import { Box, Card, Text, Title } from "@mantine/core";
 import CountUp from "./CountUp";
 import styles from "../style/numberCard.module.css";
 import { dm_serif } from "@/theme/fonts";

@@ -2,12 +2,11 @@
 
 import { SlideData } from "@/types/slideData";
 import { Carousel } from "@mantine/carousel";
-import { Image, Box, Text, Title, Space } from "@mantine/core";
+import { Image, Box, Title, Space } from "@mantine/core";
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useRef, useState } from "react";
 import { dm_serif } from "../../theme/fonts";
 import styles from "../style/imageCarousel.module.css";
-import { IconArrowRight, IconArrowLeft } from "@tabler/icons-react";
 
 type ImageCarouselProps = {
   slides?: SlideData[];

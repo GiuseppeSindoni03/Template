@@ -5,7 +5,6 @@ import "@mantine/carousel/styles.css";
 import Header from "./components/Header";
 import Providers from "./components/Provider";
 import { Metadata } from "next";
-import Footer from "./components/FooterLinks";
 import { footerInfo } from "@/mock/mock";
 import FooterLinks from "./components/FooterLinks";
 

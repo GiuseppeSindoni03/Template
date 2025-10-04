@@ -1,6 +1,6 @@
 import { Box, Space, Title } from "@mantine/core";
 import NumberCard from "./NumberCard";
-import { dm_serif, inter } from "../../theme/fonts";
+import { dm_serif } from "../../theme/fonts";
 import styles from "../style/numberSection.module.css";
 
 type NumberSectionProps = {
