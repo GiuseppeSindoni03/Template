@@ -21,7 +21,7 @@ export default function Page() {
         // border: "4px solid black",
       }}
     >
-      <HeroSection slides={servicesSlide} />
+      <HeroSection id={"services"} slides={servicesSlide} />
 
       {services.map((service, index) => (
         <ContentSection
@@ -34,7 +34,7 @@ export default function Page() {
           padding="3rem"
           gap="2rem"
           minHeight="60vh"
-          backgroundColor={gradients.minimal}
+          backgroundColor={gradients.elegant}
         >
           <ImageContainer
             src={service.image}

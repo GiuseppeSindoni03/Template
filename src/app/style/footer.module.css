@@ -66,3 +66,16 @@
   align-items: start;
   justify-content: space-between;
 }
+
+.link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.link:hover {
+  color: var(--hover-color);
+}

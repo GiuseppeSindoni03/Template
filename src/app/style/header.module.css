@@ -59,8 +59,14 @@
   white-space: nowrap;
 }
 
+/* .activeLink {
+  font-weight: bold;
+  border-bottom: 2px solid var(--hover-color);
+} */
+
 .link:hover {
-  color: var(--hover-color);
+  /* font-weight: bold; */
+  /* color: var(--hover-color); */
 }
 
 /* Hamburger menu (nascosto su desktop) */

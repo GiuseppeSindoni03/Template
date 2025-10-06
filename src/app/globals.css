@@ -13,6 +13,7 @@
 
 .link {
   &:hover {
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    color: var(--hover-color);
   }
 }

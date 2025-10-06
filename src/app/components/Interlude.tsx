@@ -16,6 +16,7 @@ type CSSVarProps = React.CSSProperties & {
 };
 
 type InterludeProps = {
+  id?: string;
   children: ReactNode;
   padding?: string | number;
   gap?: string | number;
@@ -54,6 +55,7 @@ export default function Interlude({
   overlayOpacity = 0.3,
   responsive,
   backgroundColor = "white",
+  id,
 }: InterludeProps) {
   const cssVars: CSSVarProps = {
     "--cs-gap": typeof gap === "number" ? `${gap}px` : gap,
@@ -109,9 +111,11 @@ export default function Interlude({
 
   return (
     <Box
+      id={id}
       component={as}
       className={clsx(styles.container, className)}
       style={{
+        // border: "1px solid red",
         minHeight,
         ...cssVars,
         ...style,

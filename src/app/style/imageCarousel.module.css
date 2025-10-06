@@ -39,7 +39,7 @@
 }
 
 .indicator {
-  z-index: 1000;
+  z-index: 1;
   border: 3px solid rgb(255, 255, 255);
 }
 

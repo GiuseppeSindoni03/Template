@@ -6,11 +6,13 @@ import { SlideData } from "@/types/slideData";
 
 type HeroParameter = {
   slides: SlideData[];
+  id?: string;
 };
 
 export default function HeroSection(heroParameter: HeroParameter) {
   return (
     <Box
+      id={heroParameter.id}
       component="section"
       style={{
         width: "100%",

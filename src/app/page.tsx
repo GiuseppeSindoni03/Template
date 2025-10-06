@@ -1,9 +1,10 @@
 "use client";
 
-import { Box, Title } from "@mantine/core";
+import { Box, Space, Title } from "@mantine/core";
 import HeroSection from "./components/Herosection";
 import ContentSection from "./components/ContentSection";
-import { customColors, gradients } from "@/theme/colors";
+import { gradients } from "@/theme/colors";
+import { colorConfig } from "../mock/mock";
 
 import TextContent from "./components/TextContent";
 import ImageContainer from "./components/ImageContainer";
@@ -37,23 +38,23 @@ export default function LandingPage() {
       <HeroSection slides={slides} />
 
       <ContentSection
+        maxWidth={"80%"}
         as="section"
         id="chi-siamo"
         ariaLabel="Sezione Chi siamo"
         orientation={chiSiamo.orientation} // 'left'
         // background={chiSiamo.backgroundColor} // se è un gradiente, usa 'background'
-        maxWidth={1200}
         padding="3rem"
         gap="2rem"
         minHeight="60vh"
-        backgroundColor={gradients.minimal}
+        backgroundColor={gradients.elegant}
         // border="1px solid blue"
       >
         <ImageContainer
           src={chiSiamo.image}
           imageAlt={chiSiamo.imageAlt}
           size="lg"
-          style={{ maxWidth: 520, width: "100%" }}
+          style={{ width: "auto" }}
         />
 
         <TextContent
@@ -67,6 +68,7 @@ export default function LandingPage() {
       </ContentSection>
 
       <Interlude
+        id="specialties"
         imageSrc={interlude.src}
         imageAlt="Descrizione immagine"
         size="lg"
@@ -77,7 +79,7 @@ export default function LandingPage() {
           fw={700}
           ff={dm_serif.className}
           size="clamp(2rem, 6vw, 4rem)"
-          c={customColors.template[0]}
+          c={colorConfig.palette}
           style={{
             textShadow: "0 2px 8px rgba(0, 0, 0, 0.7)",
             lineHeight: "1.2",
@@ -88,11 +90,11 @@ export default function LandingPage() {
       </Interlude>
 
       <ContentSection
+        // border="1px solid red"
         as="section"
         // backgroundColor={specialty.backgroundColor}
-        maxWidth={1200}
-        gap="1.5rem"
-        padding="2rem"
+        maxWidth={"80%"}
+        gap={"1em"}
         orientation="horizontal-scroll"
       >
         {specialty.map((spec, index) => (
@@ -106,15 +108,23 @@ export default function LandingPage() {
       </ContentSection>
 
       <ContentSection
+        minHeight={"80vh"}
+        maxWidth={"80%"}
         as="section"
         orientation="column"
-        backgroundColor={gradients.minimal}
+        padding={0}
+        gap={0}
+        // backgroundColor={gradients.elegant}
+        // border="1px solid red"
       >
         <NumberSection numbers={numberCards} />
       </ContentSection>
 
+      <Space h={"xl"} />
+
       <Interlude
-        maxWidth={"1900px"}
+        id="place"
+        maxWidth={"80%"}
         backgroundColor="#FCBA04"
         size="lg"
         minHeight="150px"

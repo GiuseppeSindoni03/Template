@@ -37,7 +37,7 @@ export default function ContentSection({
   backgroundColor,
   padding = "2rem",
   gap = "2rem",
-  maxWidth = "1200px",
+  maxWidth = "2000px",
   minHeight = "300px",
   className,
   style,
@@ -112,6 +112,7 @@ export default function ContentSection({
       style={{
         background,
         backgroundColor,
+        maxWidth,
         width: "100%",
         minHeight: isHorizontalScroll ? "auto" : minHeight,
         display: "flex",

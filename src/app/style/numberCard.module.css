@@ -1,7 +1,7 @@
 /* Base styles - Desktop */
 .card {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   height: 150px;
   /* border: 1px solid blue; */
 }

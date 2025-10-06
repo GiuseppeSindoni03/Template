@@ -1,6 +1,16 @@
 import { FooterProps } from "@/app/components/FooterLinks";
-import { gradients } from "@/theme/colors";
+import { ColorConfig, gradients } from "@/theme/colors";
 import { SlideData } from "@/types/slideData";
+
+/**
+ * CONFIGURAZIONE COLORI DEL TEMPLATE
+ * Cambia 'palette' per modificare tutto lo stile del sito
+ * Opzioni: 'elegant' | 'rustic' | 'modernPub' | 'trendy' | 'healthy' | 'seafood'
+ */
+export const colorConfig: ColorConfig = {
+  palette: "rustic",
+  gradient: "rustic",
+};
 
 export const numberCards: NumberCardType[] = [
   {
@@ -44,7 +54,7 @@ export const services = [
     content:
       "Che sia un compleanno, un anniversario o una serata speciale, da noi trovi l’atmosfera giusta per ogni occasione. Organizziamo eventi su misura con allestimenti, menu personalizzati e tutta la cura per rendere il tuo giorno davvero unico.",
     orientation: "left" as const,
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "party",
   },
   {
@@ -53,7 +63,7 @@ export const services = [
     content:
       "Che sia un compleanno, un anniversario o una serata speciale, da noi trovi l’atmosfera giusta per ogni occasione. Organizziamo eventi su misura con allestimenti, menu personalizzati e tutta la cura per rendere il tuo giorno davvero unico.",
     orientation: "right" as const,
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "delivery",
   },
   {
@@ -62,14 +72,14 @@ export const services = [
     content:
       "Che sia un compleanno, un anniversario o una serata speciale, da noi trovi l’atmosfera giusta per ogni occasione. Organizziamo eventi su misura con allestimenti, menu personalizzati e tutta la cura per rendere il tuo giorno davvero unico.",
     orientation: "left" as const,
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "party",
   },
 ];
 
 export const specialty = [
   {
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -78,7 +88,7 @@ export const specialty = [
   },
 
   {
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -86,7 +96,7 @@ export const specialty = [
       "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
   },
   {
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -94,7 +104,7 @@ export const specialty = [
       "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
   },
   {
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -102,7 +112,7 @@ export const specialty = [
       "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
   },
   {
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -110,7 +120,7 @@ export const specialty = [
       "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
   },
   {
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -118,7 +128,7 @@ export const specialty = [
       "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
   },
   {
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -126,7 +136,7 @@ export const specialty = [
       "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
   },
   {
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -134,7 +144,7 @@ export const specialty = [
       "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
   },
   {
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -142,7 +152,7 @@ export const specialty = [
       "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
   },
   {
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -150,7 +160,7 @@ export const specialty = [
       "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
   },
   {
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -158,7 +168,7 @@ export const specialty = [
       "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
   },
   {
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -166,7 +176,7 @@ export const specialty = [
       "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
   },
   {
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -175,7 +185,7 @@ export const specialty = [
   },
 
   {
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -183,7 +193,7 @@ export const specialty = [
       "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
   },
   {
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -198,7 +208,7 @@ export const contentSections = [
     content:
       "Scopri la nostra selezione di cocktail artigianali, preparati con ingredienti di prima qualità. Ogni drink è una combinazione perfetta di sapori unici e presentazione elegante.",
     orientation: "right" as const,
-    backgroundColor: gradients.orange,
+    backgroundColor: gradients.elegant,
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
   },
   // {
@@ -232,7 +242,7 @@ export const chiSiamo = {
   content:
     "Da tre generazioni portiamo in tavola il gusto autentico della cucina napoletana. Ogni piatto racconta una storia di famiglia, di ingredienti freschi e di passione per la tradizione. Il nostro ristorante è un luogo dove ci si sente a casa, tra profumi familiari e sorrisi sinceri.",
   orientation: "left" as const,
-  backgroundColor: gradients.orange,
+  backgroundColor: gradients.elegant,
   imageAlt: "Chi siamo",
 };
 
@@ -288,9 +298,9 @@ export const footerInfo: FooterProps = {
     "7:00 - 01:00",
   ],
   links: [
-    { link: "/", label: "Home" },
-    { link: "/", label: "Specialità" },
-    { link: "/", label: "Dove trovarci" },
-    { link: "/", label: "Servizi" },
+    { link: "/", label: "Chi siamo", scrollTo: "chi-siamo" },
+    { link: "/", label: "Specialità", scrollTo: "specialties" },
+    { link: "/", label: "Dove trovarci", scrollTo: "place" },
+    { link: "/servizi", label: "Servizi", scrollTo: "services" },
   ],
 };

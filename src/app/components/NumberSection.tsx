@@ -15,13 +15,14 @@ export default function NumberSection(props: NumberSectionProps) {
           className={styles.title}
           order={6}
           size={"clamp(4em, 3vh, 5em) "}
-          ff={dm_serif.className}
           ta={"center"}
         >
-          Il nostro percorso in numeri fino ad oggi
+          Il nostro percorso in <br /> numeri fino ad oggi
         </Title>
       </div>
 
+      <Space h={"xl"} />
+      <Space h={"xl"} />
       <Space h={"xl"} />
 
       <Box className={styles.cardsContainer}>

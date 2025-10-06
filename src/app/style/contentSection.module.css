@@ -35,6 +35,7 @@
 
 /* Layout scroll orizzontale */
 .horizontalScroll {
+  padding-inline-start: 0;
   flex-direction: row;
   align-items: stretch;
   justify-content: flex-start;
@@ -45,7 +46,6 @@
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
   min-height: auto;
-  /* Nasconde scrollbar su desktop per un look più pulito */
 }
 
 .horizontalScroll::-webkit-scrollbar {
@@ -114,6 +114,10 @@
   }
 
   .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     gap: calc(var(--cs-gap, 2rem) / 1.5);
     padding: calc(var(--cs-pad, 2rem) / 1.5);
   }
