@@ -127,7 +127,7 @@
   .rowReverse {
     flex-direction: column;
     align-items: stretch;
-    justify-content: flex-start;
+    text-align: center;
   }
 
   .container:not(.horizontalScroll):not(.horizontalCentered) {

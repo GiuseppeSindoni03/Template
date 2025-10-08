@@ -1,6 +1,5 @@
 .header {
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.3);
   padding: 12px 0;
   z-index: 10;
   display: flex;
@@ -22,6 +21,7 @@
 }
 
 .inner {
+  /* border: 1px solid blue; */
   width: 100%;
   display: flex;
   align-items: center;
@@ -29,7 +29,8 @@
 }
 
 .nav {
-  margin-left: 40px;
+  /* border: 1px solid red; */
+  /* margin-left: 40px; */
   width: 100%;
   display: flex;
   align-items: center;
@@ -51,7 +52,6 @@
 }
 
 .link {
-  color: rgb(255, 255, 255);
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 500;
@@ -64,9 +64,8 @@
   border-bottom: 2px solid var(--hover-color);
 } */
 
-.link:hover {
-  /* font-weight: bold; */
-  /* color: var(--hover-color); */
+.link:hover[hoverColor] {
+  color: hoverColor;
 }
 
 /* Hamburger menu (nascosto su desktop) */
@@ -119,9 +118,10 @@
     position: fixed;
     top: 0;
     right: 0;
+    left: 0; /* AGGIUNTO: forza il nav a partire da sinistra */
     height: 100vh;
-    width: 70%;
-    max-width: 300px;
+    width: 100%; /* MODIFICATO: da 70% a 100% */
+    max-width: none; /* MODIFICATO: rimuovi il max-width di 300px */
     background-color: rgba(0, 0, 0, 0.95);
     flex-direction: column;
     justify-content: center;
@@ -136,6 +136,7 @@
 
   .nav.navOpen {
     transform: translateX(0);
+    width: 100%;
   }
 
   .link {
@@ -152,16 +153,29 @@
 }
 
 /* Mobile piccoli (larghezza massima 480px) */
-@media (max-width: 480px) {
+@media (max-width: 478px) {
+  .header {
+    padding: 8px 16px; /* Aggiungi padding orizzontale */
+  }
+
+  .inner {
+    padding: 0 8px; /* Padding interno */
+    max-width: 100%;
+  }
+
   .logoImage {
-    max-width: 80px;
+    max-width: 70px; /* Riduci ulteriormente il logo */
+  }
+
+  .hamburger {
+    padding: 5px; /* Riduci il padding del burger */
+  }
+
+  .hamburger span {
+    width: 22px; /* Riduci le barre dell'hamburger */
   }
 
   .link {
-    font-size: 1.3rem;
-  }
-
-  .nav {
-    width: 80%;
+    font-size: 1.2rem; /* Link leggermente più piccoli nel menu */
   }
 }

@@ -16,7 +16,7 @@
 
 /* Sezione immagine */
 .imageSection {
-  aspect-ratio: 16 / 12;
+  aspect-ratio: 2.8 / 3;
   overflow: hidden;
   background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
   position: relative;
@@ -61,12 +61,12 @@
 
 @media (max-width: 1024px) {
   .card {
-    max-height: 10px;
+    /* min-height: 500px; */
   }
 
-  /* .imageSection {
-    aspect-ratio: 16 / 9;
-  } */
+  .imageSection {
+    aspect-ratio: 11 / 12;
+  }
 
   .title {
     font-size: clamp(1rem, 2.5vw, 1.25rem);
@@ -76,11 +76,8 @@
 /* Responsive breakpoints */
 @media (max-width: 768px) {
   .card {
-    max-width: 250px;
-    max-height: 10px;
-    /* border: 1px solid red; */
+    min-height: 400px;
   }
-
   /* .imageSection {
     aspect-ratio: 16 / 9;
   } */
@@ -91,9 +88,9 @@
 }
 
 @media (max-width: 480px) {
-  .imageSection {
+  /* .imageSection {
     aspect-ratio: 4 / 3;
-  }
+  } */
 
   .title {
     font-size: 1.125rem;

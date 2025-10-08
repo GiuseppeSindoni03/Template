@@ -11,6 +11,8 @@ type CardProps = {
   contentFont?: string;
   titleColor?: string;
   contentColor?: string;
+  titleWeight?: string;
+  contentWeight?: string;
 };
 
 export function CardSpecialty(props: CardProps) {
@@ -38,6 +40,7 @@ export function CardSpecialty(props: CardProps) {
         className={styles.contentContainer}
       >
         <Title
+          fw={props.titleWeight}
           order={6}
           style={{
             color: props.titleColor,
@@ -49,7 +52,7 @@ export function CardSpecialty(props: CardProps) {
 
         <Text
           size="md"
-          fw={"bold"}
+          fw={props.contentWeight}
           style={{
             color: props.contentColor,
           }}

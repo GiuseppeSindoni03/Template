@@ -76,7 +76,7 @@ export default function LandingPage() {
           order={6}
           fw={700}
           ff={dm_serif.className}
-          c={"#FCBA04"}
+          c={""}
           size="clamp(2rem, 6vw, 4rem)"
           style={{
             textShadow: "0 2px 8px rgba(0, 0, 0, 0.7)",

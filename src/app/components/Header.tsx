@@ -7,10 +7,17 @@ import Image from "next/image";
 import { roboto } from "../../theme/fonts";
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import { hover } from "motion/react";
 
 type HeaderProps = {
   logo: string;
   carouselHeight?: number;
+  backgroundColor?: string;
+  borderRadius?: string;
+  linkColor?: string;
+  linkFont?: string;
+  linkWeight?: string;
+  hoverColor?: string;
 };
 
 const links = [
@@ -33,7 +40,12 @@ const links = [
   { link: "/", label: "Specialità", scrollTo: "specialties" },
 ];
 
-export default function Header(props: HeaderProps) {
+export default function Header({
+  linkColor = "white",
+  hoverColor = "black",
+
+  ...props
+}: HeaderProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -145,8 +157,44 @@ export default function Header(props: HeaderProps) {
     }
   };
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      // Salva la posizione corrente dello scroll
+      const scrollY = window.scrollY;
+
+      // Blocca lo scroll
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+      document.body.style.overflowY = "scroll"; // Mantiene la scrollbar per evitare il "jump"
+    } else {
+      // Ripristina lo scroll
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflowY = "";
+
+      // Ripristina la posizione dello scroll
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    }
+
+    // Cleanup quando il componente viene smontato
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflowY = "";
+    };
+  }, [isMobileMenuOpen]);
   return (
-    <header className={`${styles.header} ${!isVisible ? styles.hidden : ""}`}>
+    <header
+      style={{
+        backgroundColor: props.backgroundColor,
+        borderRadius: props.borderRadius,
+      }}
+      className={`${styles.header} ${!isVisible ? styles.hidden : ""}`}
+    >
       <Container size="xxl" h={60} className={styles.inner}>
         <Link href="/" className={styles.logo}>
           <Image
@@ -183,10 +231,16 @@ export default function Header(props: HeaderProps) {
               <Link
                 key={index}
                 href={href}
-                className={`${styles.link} ${roboto.className} link ${
+                style={{
+                  color: linkColor,
+                  fontWeight: props.linkWeight,
+                }}
+                className={`${styles.link} ${props.linkFont}  ${
                   isActive ? styles.activeLink : ""
                 }`}
                 onClick={(e) => handleLinkClick(e, link)}
+                onMouseEnter={(e) => (e.currentTarget.style.color = hoverColor)} // Modifica colore su hover
+                onMouseLeave={(e) => (e.currentTarget.style.color = linkColor)}
               >
                 {link.label}
               </Link>

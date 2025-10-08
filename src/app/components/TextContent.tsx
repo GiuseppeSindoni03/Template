@@ -28,20 +28,18 @@ export default function TextContent({
       <Title
         order={6}
         size={props.titleSize}
-        ff={titleFont}
         fw={titleWeight}
         c={props.titleColor}
-        className={styles.title}
+        className={`${styles.title} ${titleFont}`}
       >
         {props.title}
       </Title>
 
       <Text
         size={props.contentSize}
-        ff={contentFont}
         fw={contentWeight}
         c={props.contentColor}
-        className={styles.content}
+        className={`${styles.content} ${contentFont}`}
       >
         {props.content}
       </Text>
