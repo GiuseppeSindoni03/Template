@@ -6,6 +6,11 @@ type CardProps = {
   title: string;
   src: string;
   content: string;
+  backgroundColor?: string;
+  titleFont?: string;
+  contentFont?: string;
+  titleColor?: string;
+  contentColor?: string;
 };
 
 export function CardSpecialty(props: CardProps) {
@@ -26,12 +31,30 @@ export function CardSpecialty(props: CardProps) {
         />
       </Card.Section>
 
-      <Stack gap="xl" mt="md" className={styles.contentContainer}>
-        <Title order={6} className={styles.title}>
+      <Stack
+        gap="xl"
+        mt="md"
+        style={{ backgroundColor: props.backgroundColor }}
+        className={styles.contentContainer}
+      >
+        <Title
+          order={6}
+          style={{
+            color: props.titleColor,
+          }}
+          className={`${styles.title} ${props.titleFont}`}
+        >
           {props.title}
         </Title>
 
-        <Text size="sm" c="dimmed" className={styles.description}>
+        <Text
+          size="md"
+          fw={"bold"}
+          style={{
+            color: props.contentColor,
+          }}
+          className={`${styles.content} ${props.contentFont}`}
+        >
           {props.content}
         </Text>
       </Stack>

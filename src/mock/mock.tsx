@@ -1,12 +1,7 @@
 import { FooterProps } from "@/app/components/FooterLinks";
-import { ColorConfig, gradients } from "@/theme/colors";
+import { ColorConfig } from "@/theme/colors";
 import { SlideData } from "@/types/slideData";
 
-/**
- * CONFIGURAZIONE COLORI DEL TEMPLATE
- * Cambia 'palette' per modificare tutto lo stile del sito
- * Opzioni: 'elegant' | 'rustic' | 'modernPub' | 'trendy' | 'healthy' | 'seafood'
- */
 export const colorConfig: ColorConfig = {
   palette: "rustic",
   gradient: "rustic",
@@ -31,20 +26,6 @@ export const numberCards: NumberCardType[] = [
     to: 92,
     symbol: "%",
   },
-
-  // {
-  //   label: "Caffe bevuti",
-  //   from: 0,
-  //   to: 92,
-  //   symbol: "+",
-  // },
-
-  // {
-  //   label: "Caffe bevuti",
-  //   from: 0,
-  //   to: 92,
-  //   symbol: "+",
-  // },
 ];
 
 export const services = [
@@ -54,7 +35,7 @@ export const services = [
     content:
       "Che sia un compleanno, un anniversario o una serata speciale, da noi trovi l’atmosfera giusta per ogni occasione. Organizziamo eventi su misura con allestimenti, menu personalizzati e tutta la cura per rendere il tuo giorno davvero unico.",
     orientation: "left" as const,
-    backgroundColor: gradients.elegant,
+    backgroundColor: "",
     imageAlt: "party",
   },
   {
@@ -63,7 +44,7 @@ export const services = [
     content:
       "Che sia un compleanno, un anniversario o una serata speciale, da noi trovi l’atmosfera giusta per ogni occasione. Organizziamo eventi su misura con allestimenti, menu personalizzati e tutta la cura per rendere il tuo giorno davvero unico.",
     orientation: "right" as const,
-    backgroundColor: gradients.elegant,
+    backgroundColor: "",
     imageAlt: "delivery",
   },
   {
@@ -72,14 +53,14 @@ export const services = [
     content:
       "Che sia un compleanno, un anniversario o una serata speciale, da noi trovi l’atmosfera giusta per ogni occasione. Organizziamo eventi su misura con allestimenti, menu personalizzati e tutta la cura per rendere il tuo giorno davvero unico.",
     orientation: "left" as const,
-    backgroundColor: gradients.elegant,
+    backgroundColor: "",
     imageAlt: "party",
   },
 ];
 
 export const specialty = [
   {
-    backgroundColor: gradients.elegant,
+    backgroundColor: "",
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -88,7 +69,7 @@ export const specialty = [
   },
 
   {
-    backgroundColor: gradients.elegant,
+    backgroundColor: "",
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
@@ -96,110 +77,13 @@ export const specialty = [
       "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
   },
   {
-    backgroundColor: gradients.elegant,
+    backgroundColor: "",
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
     src: "/foto4.jpeg",
     title: "Cappuccino caldo",
     content:
       "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
   },
-  {
-    backgroundColor: gradients.elegant,
-    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-    src: "/foto4.jpeg",
-    title: "Cappuccino caldo",
-    content:
-      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  },
-  {
-    backgroundColor: gradients.elegant,
-    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-    src: "/foto4.jpeg",
-    title: "Cappuccino caldo",
-    content:
-      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  },
-  {
-    backgroundColor: gradients.elegant,
-    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-    src: "/foto4.jpeg",
-    title: "Cappuccino caldo",
-    content:
-      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  },
-  // {
-  //   backgroundColor: gradients.elegant,
-  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-  //   src: "/foto4.jpeg",
-  //   title: "Cappuccino caldo",
-  //   content:
-  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  // },
-  // {
-  //   backgroundColor: gradients.elegant,
-  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-  //   src: "/foto4.jpeg",
-  //   title: "Cappuccino caldo",
-  //   content:
-  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  // },
-  // {
-  //   backgroundColor: gradients.elegant,
-  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-  //   src: "/foto4.jpeg",
-  //   title: "Cappuccino caldo",
-  //   content:
-  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  // },
-  // {
-  //   backgroundColor: gradients.elegant,
-  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-  //   src: "/foto4.jpeg",
-  //   title: "Cappuccino caldo",
-  //   content:
-  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  // },
-  // {
-  //   backgroundColor: gradients.elegant,
-  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-  //   src: "/foto4.jpeg",
-  //   title: "Cappuccino caldo",
-  //   content:
-  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  // },
-  // {
-  //   backgroundColor: gradients.elegant,
-  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-  //   src: "/foto4.jpeg",
-  //   title: "Cappuccino caldo",
-  //   content:
-  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  // },
-  // {
-  //   backgroundColor: gradients.elegant,
-  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-  //   src: "/foto4.jpeg",
-  //   title: "Cappuccino caldo",
-  //   content:
-  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  // },
-
-  // {
-  //   backgroundColor: gradients.elegant,
-  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-  //   src: "/foto4.jpeg",
-  //   title: "Cappuccino caldo",
-  //   content:
-  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  // },
-  // {
-  //   backgroundColor: gradients.elegant,
-  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-  //   src: "/foto4.jpeg",
-  //   title: "Cappuccino caldo",
-  //   content:
-  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  // },
 ];
 export const contentSections = [
   {
@@ -208,27 +92,9 @@ export const contentSections = [
     content:
       "Scopri la nostra selezione di cocktail artigianali, preparati con ingredienti di prima qualità. Ogni drink è una combinazione perfetta di sapori unici e presentazione elegante.",
     orientation: "right" as const,
-    backgroundColor: gradients.elegant,
+    backgroundColor: "",
     imageAlt: "Cocktail bar elegante con atmosfera raffinata",
   },
-  // {
-  //   image: "/foto2.jpg",
-  //   title: "Cucina Gourmet",
-  //   content:
-  //     "La nostra cucina propone piatti innovativi che uniscono tradizione e creatività. Ingredienti freschi e tecniche moderne per un'esperienza gastronomica indimenticabile.",
-  //   orientation: "left" as const,
-  //   backgroundColor: gradients.minimal,
-  //   imageAlt: "Piatti gourmet della nostra cucina",
-  // },
-  // {
-  //   image: "/foto3.jpg",
-  //   title: "Ambiente Esclusivo",
-  //   content:
-  //     "Un'atmosfera unica e sofisticata dove ogni dettaglio è curato per offrirti un'esperienza di classe. Il luogo ideale per occasioni speciali e momenti indimenticabili.",
-  //   orientation: "right" as const,
-  //   backgroundColor: gradients.orange,
-  //   imageAlt: "Ambiente interno elegante e raffinato",
-  // },
 ];
 
 export const interlude = {
@@ -242,7 +108,7 @@ export const chiSiamo = {
   content:
     "Da tre generazioni portiamo in tavola il gusto autentico della cucina napoletana. Ogni piatto racconta una storia di famiglia, di ingredienti freschi e di passione per la tradizione. Il nostro ristorante è un luogo dove ci si sente a casa, tra profumi familiari e sorrisi sinceri.",
   orientation: "left" as const,
-  backgroundColor: gradients.elegant,
+  backgroundColor: "",
   imageAlt: "Chi siamo",
 };
 
@@ -276,17 +142,14 @@ export const slides: SlideData[] = [
 ];
 
 export const footerInfo: FooterProps = {
-  logo: "logoIpsumBlack.svg",
-  address: "Via Porricelli 83, Napoli",
-  email: "giuseppesindoni@hotmail.com",
-  phone: "3509702659",
+  logo: "",
+  address: "",
+  email: "",
+  phone: "",
   social: {
-    tiktok:
-      "https://www.youtube.com/watch?v=PdSXbJboYKE&list=RDPdSXbJboYKE&start_radio=1",
-    facebook:
-      "https://www.youtube.com/watch?v=PdSXbJboYKE&list=RDPdSXbJboYKE&start_radio=1",
-    instagram:
-      "https://www.youtube.com/watch?v=PdSXbJboYKE&list=RDPdSXbJboYKE&start_radio=1",
+    tiktok: "",
+    facebook: "",
+    instagram: "",
   },
   workSchedule: [
     "Giorno di chiusura",

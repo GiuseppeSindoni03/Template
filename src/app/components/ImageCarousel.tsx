@@ -2,8 +2,7 @@
 
 import { SlideData } from "@/types/slideData";
 import { Carousel } from "@mantine/carousel";
-import { Box, Title, Space } from "@mantine/core";
-import Image from "next/image";
+import { Box, Title, Space, Image } from "@mantine/core";
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useRef, useState } from "react";
 import { dm_serif } from "../../theme/fonts";
@@ -67,7 +66,6 @@ export default function ImageCarousel({
               <Image
                 src={slide.src}
                 alt={slide.alt || slide.title || `Slide ${index + 1}`}
-                fill
                 sizes="100vw"
                 className={styles.slideImage}
               />
