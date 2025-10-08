@@ -21,7 +21,7 @@ export default function Page() {
         // border: "4px solid black",
       }}
     >
-      <HeroSection id={"services"} slides={servicesSlide} />
+      <HeroSection scrollable={false} id={"services"} slides={servicesSlide} />
 
       {services.map((service, index) => (
         <ContentSection
@@ -30,7 +30,6 @@ export default function Page() {
           id={index.toString()}
           ariaLabel=""
           orientation={service.orientation}
-          maxWidth={1200}
           padding="3rem"
           gap="2rem"
           minHeight="60vh"

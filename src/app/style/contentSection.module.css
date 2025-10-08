@@ -4,12 +4,14 @@
 }
 
 .container {
+  max-width: 80%;
   display: flex;
   gap: var(--cs-gap, 2rem);
-  padding: var(--cs-pad, 2rem);
+  padding: 2rem 0;
   width: 100%;
   min-height: 300px;
   margin: 0 auto;
+  /* border: 1px solid red; */
 }
 
 /* Layout a riga (immagine + testo) */
@@ -32,9 +34,25 @@
   align-items: center;
   justify-content: center;
 }
+.horizontalCentered {
+  width: 100%;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  min-height: auto;
+}
 
-/* Layout scroll orizzontale */
+.horizontalCentered > * {
+  flex: 0 0 auto;
+  max-width: 380px;
+  min-width: 280px;
+}
+
+/* Layout scroll orizzontale per molte card (>3) */
 .horizontalScroll {
+  width: 100%;
+
   padding-inline-start: 0;
   flex-direction: row;
   align-items: stretch;
@@ -83,7 +101,7 @@
 }
 
 /* Desktop: mantieni scroll orizzontale */
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .horizontalScroll {
     /* Su desktop, nasconde completamente la scrollbar */
     scrollbar-width: none;
@@ -103,7 +121,6 @@
     display: block;
   }
 }
-
 /* Tablet: converti layout row in column */
 @media (max-width: 1024px) {
   .row,
@@ -113,11 +130,11 @@
     justify-content: flex-start;
   }
 
-  .container {
+  .container:not(.horizontalScroll):not(.horizontalCentered) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    max-width: 100%;
     gap: calc(var(--cs-gap, 2rem) / 1.5);
     padding: calc(var(--cs-pad, 2rem) / 1.5);
   }
@@ -125,35 +142,44 @@
 
 /* Mobile: scroll orizzontale nativo, scrollbar sempre visibile */
 @media (max-width: 768px) {
-  .horizontalScroll {
+  .horizontalScroll,
+  .horizontalCentered {
     padding-bottom: 1rem;
     scrollbar-width: thin;
     scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
   }
 
-  .horizontalScroll::-webkit-scrollbar {
+  .horizontalScroll::-webkit-scrollbar,
+  .horizontalCentered::-webkit-scrollbar {
     display: block;
     height: 6px;
   }
 
-  .horizontalScroll::-webkit-scrollbar-track {
+  .horizontalScroll::-webkit-scrollbar-track,
+  .horizontalCentered::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.1);
     border-radius: 3px;
   }
 
-  .horizontalScroll::-webkit-scrollbar-thumb {
+  .horizontalScroll::-webkit-scrollbar-thumb,
+  .horizontalCentered::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.4);
     border-radius: 3px;
   }
 
-  .horizontalScroll > * {
+  .horizontalScroll > *,
+  .horizontalCentered > * {
     min-width: 260px;
     max-width: 320px;
   }
 }
 
 @media (max-width: 480px) {
-  .horizontalScroll > * {
+  .horizontalScroll > *,
+  .horizontalCentered > * {
     min-width: 240px;
     max-width: 280px;
   }

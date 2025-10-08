@@ -115,7 +115,6 @@ export default function Interlude({
       component={as}
       className={clsx(styles.container, className)}
       style={{
-        // border: "1px solid red",
         minHeight,
         ...cssVars,
         ...style,

@@ -7,6 +7,7 @@ import { SlideData } from "@/types/slideData";
 type HeroParameter = {
   slides: SlideData[];
   id?: string;
+  scrollable?: boolean;
 };
 
 export default function HeroSection(heroParameter: HeroParameter) {
@@ -20,7 +21,7 @@ export default function HeroSection(heroParameter: HeroParameter) {
         // border: "1px solid black",
       }}
     >
-      <ImageCarousel slides={heroParameter.slides} />
+      <ImageCarousel scrollable slides={heroParameter.slides} />
     </Box>
   );
 }

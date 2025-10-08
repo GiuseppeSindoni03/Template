@@ -1,7 +1,7 @@
 // ContentSection.tsx
 import { Box } from "@mantine/core";
 import styles from "../style/contentSection.module.css";
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef, Children } from "react";
 import clsx from "clsx";
 
 type Orientation = "left" | "right" | "column" | "horizontal-scroll";
@@ -37,7 +37,7 @@ export default function ContentSection({
   backgroundColor,
   padding = "2rem",
   gap = "2rem",
-  maxWidth = "2000px",
+  maxWidth = "",
   minHeight = "300px",
   className,
   style,
@@ -49,15 +49,17 @@ export default function ContentSection({
   const containerRef = useRef<HTMLDivElement>(null);
   const isHorizontalScroll = orientation === "horizontal-scroll";
 
+  const childrenCount = Children.count(children);
+  const shouldCenter = isHorizontalScroll && childrenCount <= 3;
+
   useEffect(() => {
-    if (!isHorizontalScroll || !containerRef.current) return;
+    if (!isHorizontalScroll || !containerRef.current || shouldCenter) return;
 
     const container = containerRef.current;
     const isMobile = window.innerWidth <= 768;
 
     if (isMobile) return; // Su mobile non serve hijacking
 
-    let isScrolling = false;
     let scrollTimeout: NodeJS.Timeout;
 
     const handleWheel = (e: WheelEvent) => {
@@ -72,11 +74,8 @@ export default function ContentSection({
         e.preventDefault();
         container.scrollLeft += e.deltaY * 10;
 
-        isScrolling = true;
         clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-          isScrolling = false;
-        }, 150);
+        scrollTimeout = setTimeout(() => {}, 150);
       }
     };
 
@@ -86,7 +85,7 @@ export default function ContentSection({
       container.removeEventListener("wheel", handleWheel);
       clearTimeout(scrollTimeout);
     };
-  }, [isHorizontalScroll]);
+  }, [isHorizontalScroll, shouldCenter]);
 
   const containerLayoutClass =
     orientation === "left"
@@ -94,7 +93,9 @@ export default function ContentSection({
       : orientation === "right"
       ? styles.rowReverse
       : orientation === "horizontal-scroll"
-      ? styles.horizontalScroll
+      ? shouldCenter
+        ? styles.horizontalCentered
+        : styles.horizontalScroll
       : styles.column;
 
   const cssVars: CSSVarProps = {
@@ -122,7 +123,7 @@ export default function ContentSection({
       }}
     >
       <Box
-        ref={isHorizontalScroll ? containerRef : null}
+        ref={isHorizontalScroll && !shouldCenter ? containerRef : null}
         className={clsx(styles.container, containerLayoutClass)}
         style={cssVars}
       >

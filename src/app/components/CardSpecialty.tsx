@@ -1,4 +1,5 @@
-import { Card, Text, Title, Image, Stack } from "@mantine/core";
+import { Card, Text, Title, Stack } from "@mantine/core";
+import Image from "next/image";
 import styles from "../style/cardSpecialty.module.css";
 
 type CardProps = {
@@ -17,7 +18,12 @@ export function CardSpecialty(props: CardProps) {
       className={styles.card}
     >
       <Card.Section className={styles.imageSection}>
-        <Image className={styles.image} src={props.src} fit="contain" />
+        <Image
+          className={styles.image}
+          src={props.src}
+          fill
+          alt={props.title}
+        />
       </Card.Section>
 
       <Stack gap="xl" mt="md" className={styles.contentContainer}>

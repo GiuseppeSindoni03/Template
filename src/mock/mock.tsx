@@ -127,79 +127,79 @@ export const specialty = [
     content:
       "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
   },
-  {
-    backgroundColor: gradients.elegant,
-    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-    src: "/foto4.jpeg",
-    title: "Cappuccino caldo",
-    content:
-      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  },
-  {
-    backgroundColor: gradients.elegant,
-    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-    src: "/foto4.jpeg",
-    title: "Cappuccino caldo",
-    content:
-      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  },
-  {
-    backgroundColor: gradients.elegant,
-    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-    src: "/foto4.jpeg",
-    title: "Cappuccino caldo",
-    content:
-      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  },
-  {
-    backgroundColor: gradients.elegant,
-    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-    src: "/foto4.jpeg",
-    title: "Cappuccino caldo",
-    content:
-      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  },
-  {
-    backgroundColor: gradients.elegant,
-    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-    src: "/foto4.jpeg",
-    title: "Cappuccino caldo",
-    content:
-      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  },
-  {
-    backgroundColor: gradients.elegant,
-    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-    src: "/foto4.jpeg",
-    title: "Cappuccino caldo",
-    content:
-      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  },
-  {
-    backgroundColor: gradients.elegant,
-    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-    src: "/foto4.jpeg",
-    title: "Cappuccino caldo",
-    content:
-      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  },
+  // {
+  //   backgroundColor: gradients.elegant,
+  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+  //   src: "/foto4.jpeg",
+  //   title: "Cappuccino caldo",
+  //   content:
+  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  // },
+  // {
+  //   backgroundColor: gradients.elegant,
+  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+  //   src: "/foto4.jpeg",
+  //   title: "Cappuccino caldo",
+  //   content:
+  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  // },
+  // {
+  //   backgroundColor: gradients.elegant,
+  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+  //   src: "/foto4.jpeg",
+  //   title: "Cappuccino caldo",
+  //   content:
+  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  // },
+  // {
+  //   backgroundColor: gradients.elegant,
+  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+  //   src: "/foto4.jpeg",
+  //   title: "Cappuccino caldo",
+  //   content:
+  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  // },
+  // {
+  //   backgroundColor: gradients.elegant,
+  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+  //   src: "/foto4.jpeg",
+  //   title: "Cappuccino caldo",
+  //   content:
+  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  // },
+  // {
+  //   backgroundColor: gradients.elegant,
+  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+  //   src: "/foto4.jpeg",
+  //   title: "Cappuccino caldo",
+  //   content:
+  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  // },
+  // {
+  //   backgroundColor: gradients.elegant,
+  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+  //   src: "/foto4.jpeg",
+  //   title: "Cappuccino caldo",
+  //   content:
+  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  // },
 
-  {
-    backgroundColor: gradients.elegant,
-    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-    src: "/foto4.jpeg",
-    title: "Cappuccino caldo",
-    content:
-      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  },
-  {
-    backgroundColor: gradients.elegant,
-    imageAlt: "Cocktail bar elegante con atmosfera raffinata",
-    src: "/foto4.jpeg",
-    title: "Cappuccino caldo",
-    content:
-      "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
-  },
+  // {
+  //   backgroundColor: gradients.elegant,
+  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+  //   src: "/foto4.jpeg",
+  //   title: "Cappuccino caldo",
+  //   content:
+  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  // },
+  // {
+  //   backgroundColor: gradients.elegant,
+  //   imageAlt: "Cocktail bar elegante con atmosfera raffinata",
+  //   src: "/foto4.jpeg",
+  //   title: "Cappuccino caldo",
+  //   content:
+  //     "Il cappucino con latte di vacca caldo, e con cafe di miscela arabica.",
+  // },
 ];
 export const contentSections = [
   {

@@ -62,7 +62,7 @@ export default function FooterLinks(props: FooterProps) {
       style={{ backgroundColor: "#293132" }}
     >
       <Stack>
-        <Image className={styles.logo} src="logoIpsumBlack.svg" />
+        <Image alt="logo" className={styles.logo} src="logoIpsumBlack.svg" />
 
         <Group>
           <Text c={"white"}>{props.address}</Text>

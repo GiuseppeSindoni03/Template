@@ -2,7 +2,8 @@
 
 import { SlideData } from "@/types/slideData";
 import { Carousel } from "@mantine/carousel";
-import { Image, Box, Title, Space } from "@mantine/core";
+import { Box, Title, Space } from "@mantine/core";
+import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useRef, useState } from "react";
 import { dm_serif } from "../../theme/fonts";
@@ -10,9 +11,13 @@ import styles from "../style/imageCarousel.module.css";
 
 type ImageCarouselProps = {
   slides?: SlideData[];
+  scrollable?: boolean;
 };
 
-export default function ImageCarousel({ slides }: ImageCarouselProps) {
+export default function ImageCarousel({
+  slides,
+  scrollable,
+}: ImageCarouselProps) {
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -50,20 +55,23 @@ export default function ImageCarousel({ slides }: ImageCarouselProps) {
       slideGap="md"
       emblaOptions={{ loop: true }}
       className={styles.carousel} //gold
-      withControls={shouldShowControls}
-      withIndicators={true}
+      withControls={shouldShowControls && scrollable}
+      withIndicators={scrollable}
       classNames={{ control: styles.control, indicator: styles.indicator }}
     >
       {slides.map((slide, index) => (
         <Carousel.Slide key={slide.id || `slide-${index}`}>
           <Box className={styles.slideContainer}>
-            <Image
-              src={slide.src}
-              alt={slide.alt || slide.title || `Slide ${index + 1}`}
-              fit="cover"
-              // radius="md"
-              className={styles.slideImage}
-            />
+            <div className={styles.imageContainer}>
+              {" "}
+              <Image
+                src={slide.src}
+                alt={slide.alt || slide.title || `Slide ${index + 1}`}
+                fill
+                sizes="100vw"
+                className={styles.slideImage}
+              />
+            </div>
 
             {/* Overlay con testo - mostra solo se c'è title o text */}
             {(slide.title || slide.text) && (

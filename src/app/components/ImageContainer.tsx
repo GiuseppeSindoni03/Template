@@ -1,4 +1,5 @@
-import { Box, Image } from "@mantine/core";
+import { Box } from "@mantine/core";
+import Image from "next/image";
 import styles from "../style/imageContainer.module.css";
 
 export default function ImageContainer({
@@ -7,7 +8,6 @@ export default function ImageContainer({
   src,
   imageAlt,
   size,
-  radius = "xl",
   rateo = 1.5,
 }: {
   src: string;
@@ -24,12 +24,12 @@ export default function ImageContainer({
       style={style}
     >
       <Image
-        radius={radius}
         src={src}
         alt={imageAlt}
         className={styles.image}
-        w={size && getImageWidth(size)}
-        h={size && rateo * getImageWidth(size)}
+        width={size && getImageWidth(size)}
+        height={size && rateo * getImageWidth(size)}
+        style={{ borderRadius: "var(--mantine-radius-md)" }}
       />
     </Box>
   );

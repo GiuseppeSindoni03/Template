@@ -1,7 +1,7 @@
-import { Box, Card, Text, Title } from "@mantine/core";
+import { Box, Card, Title } from "@mantine/core";
 import CountUp from "./CountUp";
 import styles from "../style/numberCard.module.css";
-import { dm_serif, inter } from "@/theme/fonts";
+import { inter } from "@/theme/fonts";
 
 type NumberCardProps = {
   symbol?: string;
