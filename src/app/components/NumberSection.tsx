@@ -4,6 +4,7 @@ import styles from "../style/numberSection.module.css";
 
 type NumberSectionProps = {
   numbers: NumberCardType[];
+  titleColor?: string;
 };
 
 export default function NumberSection(props: NumberSectionProps) {
@@ -15,6 +16,7 @@ export default function NumberSection(props: NumberSectionProps) {
           order={6}
           size={"clamp(4em, 3vh, 5em) "}
           ta={"center"}
+          c={props.titleColor}
         >
           Il nostro percorso in <br /> numeri fino ad oggi
         </Title>
@@ -26,6 +28,9 @@ export default function NumberSection(props: NumberSectionProps) {
         {props.numbers.map(
           (number, index) => (
             <NumberCard
+              labelColor={number.cardLabelColor}
+              numberColor={number.cardNumberColor}
+              backgroundColor={number.backgroundColor}
               label={number.label}
               from={number.from}
               to={number.to}
