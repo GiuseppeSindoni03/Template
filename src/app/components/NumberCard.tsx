@@ -16,8 +16,8 @@ export type NumberCardProps = {
   labelColor?: string;
   numberFont?: string;
   labelFont?: string;
-  numberWeight?: string;
-  labelWeight?: string;
+  numberWeight?: number;
+  labelWeight?: number;
   backgroundColor?: string;
 };
 
@@ -39,7 +39,7 @@ export default function NumberCard(props: NumberCardProps) {
               order={6}
               // size="clamp(0.875rem, 2.5vw, 2rem)"
               size="clamp(2em, 3vw, 2rem)"
-              fw={props.numberWeight || 900}
+              fw={props.numberWeight}
             >
               {props.symbol}
             </Title>
@@ -49,7 +49,7 @@ export default function NumberCard(props: NumberCardProps) {
               c={props.numberColor}
               order={6}
               size="clamp(4em, 5vw, 4rem)"
-              fw={props.numberWeight || 900}
+              fw={props.numberWeight}
             >
               <CountUp from={props.from} to={props.to} />
             </Title>
@@ -62,7 +62,7 @@ export default function NumberCard(props: NumberCardProps) {
             c={props.labelColor}
             className={`${styles.labelText} ${props.labelFont}`}
             size="clamp(1.5em, 1.5vw, 1rem)"
-            fw={props.labelWeight || 300}
+            fw={props.labelWeight}
             ta="center"
           >
             {props.label.toUpperCase()}

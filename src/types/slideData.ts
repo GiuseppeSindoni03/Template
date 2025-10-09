@@ -5,9 +5,9 @@ export type SlideData = {
   id?: string;
   alt?: string;
   titleFont?: string;
-  titleWeight?: string;
+  titleWeight?: number;
   titleColor?: string;
   textFont?: string;
-  textWeight?: string;
+  textWeight?: number;
   textColor?: string;
 };

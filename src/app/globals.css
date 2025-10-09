@@ -1,16 +1,18 @@
 :root {
-  --ciao: "red";
-  --mid-color: #beb7a4;
-  --primary-color: #000;
-  --secondary-color: #e3f2fd;
-  --hover-color: gray;
-
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-sunset: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
-
-  --hover-color: gold;
+  --green-title: #199b63;
+  --yellow-sfondo: #ffd26d;
+  --blue-text: #2265cf;
+  --gray-muted: #6b7280;
+  --hover-color: white;
+  --footer-back: #1f1f1f;
 }
 
+.link {
+  &:hover {
+    /* text-decoration: underline; */
+    color: var(--hover-color);
+  }
+}
 html,
 body {
   margin: 0;

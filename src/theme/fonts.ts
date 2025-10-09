@@ -1,5 +1,16 @@
-import { Inter, Roboto_Serif, DM_Serif_Text } from "next/font/google";
+import {
+  Inter,
+  Roboto_Serif,
+  DM_Serif_Text,
+  Erica_One,
+  Montserrat,
+} from "next/font/google";
 
+export const ericaOne = Erica_One({
+  subsets: ["latin"],
+  variable: "--font-erica",
+  weight: "400",
+});
 export const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const roboto = Roboto_Serif({
   subsets: ["latin"],
@@ -10,3 +21,5 @@ export const dm_serif = DM_Serif_Text({
   weight: "400",
   variable: "--font-dm-serif",
 });
+
+export const monteSerrat = Montserrat({ subsets: ["latin"] });

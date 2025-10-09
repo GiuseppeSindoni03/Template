@@ -19,8 +19,13 @@ export type InterludeProps = {
   title?: string;
   titleColor?: string;
   titleFont?: string;
-  titleWeight?: string;
+  titleWeight?: number;
   titleShadow?: string;
+  label?: string;
+  labelColor?: string;
+  labelFont?: string;
+  labelWeight?: number;
+  labelShadow?: string;
   id?: string;
   children?: ReactNode;
   padding?: string | number;
@@ -50,7 +55,7 @@ export default function Interlude({
   gap = "2rem",
   maxWidth = "1200px",
   minHeight = "300px",
-  imageSrc,
+  imageSrc = undefined,
   imageAlt,
   className,
   style,
@@ -145,7 +150,7 @@ export default function Interlude({
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              backgroundColor: backgroundColor,
+              backgroundColor: "var(--yellow-sfondo)",
             }}
           />
         )}

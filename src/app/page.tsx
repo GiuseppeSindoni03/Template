@@ -13,13 +13,18 @@ import { dm_serif, inter } from "@/theme/fonts";
 import styles from "./page.module.css";
 import {
   chiSiamo,
+  doveTrovarci,
   interlude,
+  map,
   numberCards,
+  numberSection,
   slides,
   specialty,
+  specialtySection,
 } from "@/mock/mock";
 import { CardSpecialty } from "./components/CardSpecialty";
 import GoogleMap from "./components/GoogleMap";
+import { spec } from "node:test/reporters";
 
 export default function LandingPage() {
   return (
@@ -83,8 +88,7 @@ export default function LandingPage() {
           c={interlude.titleColor}
           size="clamp(2rem, 6vw, 4rem)"
           style={{
-            textShadow:
-              `${interlude.titleShadow}` || "0 2px 8px rgba(0, 0, 0, 0.7)",
+            textShadow: interlude.titleShadow,
             lineHeight: "1.2",
           }}
         >
@@ -95,22 +99,18 @@ export default function LandingPage() {
       <ContentSection
         // border="1px solid red"
         as="section"
-        // backgroundColor={specialty.backgroundColor}
+        backgroundColor={specialtySection.backgroundColor}
         // maxWidth={"80%"}
         gap={"1em"}
         orientation="horizontal-scroll"
       >
         {specialty.map((spec, index) => (
-          <CardSpecialty
-            key={index}
-            src={spec.src}
-            title={spec.title}
-            content={spec.content}
-          />
+          <CardSpecialty key={index} {...spec} />
         ))}
       </ContentSection>
 
       <ContentSection
+        backgroundColor={numberSection.backgroundColor}
         minHeight={"80vh"}
         // maxWidth={"80%"}
         as="section"
@@ -120,43 +120,45 @@ export default function LandingPage() {
         // backgroundColor={gradients.elegant}
         // border="1px solid red"
       >
-        <NumberSection numbers={numberCards} />
+        <NumberSection {...numberSection} />
       </ContentSection>
 
-      <Space h={"xl"} />
-
-      <Interlude id="place" backgroundColor="#" size="lg">
+      <Interlude
+        id="place"
+        backgroundColor={doveTrovarci.backgroundColor}
+        size="lg"
+      >
         <Box className={styles.placeInterlude}>
           <Title
             order={6}
-            fw={700}
-            ff={dm_serif.className}
+            fw={doveTrovarci.titleWeight}
+            className={doveTrovarci.titleFont}
             size="clamp(2.5em, 4vw, 4rem)"
-            c={"#293132"}
+            c={doveTrovarci.titleColor}
             style={{
-              textShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+              textShadow: doveTrovarci.titleShadow,
               lineHeight: "1.2",
             }}
           >
-            Dove trovarci
+            {doveTrovarci.title}
           </Title>
           <Space h={"sm"} />
           <Title
             order={2}
-            fw={400}
-            className={`${inter.className} ${styles.address}`}
+            fw={doveTrovarci.labelWeight}
+            className={`${doveTrovarci.labelFont} ${styles.address}`}
             size="clamp(1.2rem, 2vw, 2rem)"
-            c={"white"}
+            c={doveTrovarci.labelColor}
             style={{
-              textShadow: "0 2px 8px rgba(0, 0, 0, 0.3)",
+              textShadow: doveTrovarci.labelShadow,
             }}
           >
-            Via Porricelli 83, Napoli 80048
+            {doveTrovarci.label}
           </Title>
         </Box>
       </Interlude>
 
-      <GoogleMap />
+      <GoogleMap src={map.src} />
     </Box>
   );
 }

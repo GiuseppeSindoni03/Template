@@ -6,19 +6,30 @@ export type NumberSectionProps = {
   numbers: NumberCardProps[];
   titleColor?: string;
   titleFont?: string;
-  titleWeight?: string;
+  titleWeight?: number;
+  titleShadow?: string;
+  backgroundColor?: string;
 };
 
 export default function NumberSection(props: NumberSectionProps) {
   return (
-    <Box className={styles.container}>
+    <Box
+      style={{
+        backgroundColor: props.backgroundColor,
+      }}
+      className={styles.container}
+    >
       <div className={styles.titleContainer}>
         <Title
-          className={styles.title}
+          className={`${styles.title}  ${props.titleFont}`}
           order={6}
           size={"clamp(4em, 3vh, 5em) "}
           ta={"center"}
           c={props.titleColor}
+          fw={100}
+          style={{
+            textShadow: props.titleShadow,
+          }}
         >
           Il nostro percorso in <br /> numeri fino ad oggi
         </Title>
@@ -29,20 +40,7 @@ export default function NumberSection(props: NumberSectionProps) {
       <Box className={styles.cardsContainer}>
         {props.numbers.map(
           (number, index) => (
-            <NumberCard
-              labelColor={number.labelColor}
-              numberColor={number.numberColor}
-              backgroundColor={number.backgroundColor}
-              labelFont={number.labelFont}
-              labelWeight={number.labelWeight}
-              numberFont={number.numberFont}
-              numberWeight={number.numberWeight}
-              label={number.label}
-              from={number.from}
-              to={number.to}
-              key={index}
-              symbol={number.symbol}
-            />
+            <NumberCard key={index} {...number} />
           ),
           []
         )}

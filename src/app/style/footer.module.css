@@ -75,5 +75,6 @@
 }
 
 .link:hover {
-  color: var(--hover-color);
+  color: #199b63 !important;
+  text-decoration: underline;
 }

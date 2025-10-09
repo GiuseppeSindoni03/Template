@@ -33,7 +33,7 @@ export default function Page() {
           padding="3rem"
           gap="2rem"
           minHeight="60vh"
-          backgroundColor={gradients.elegant}
+          backgroundColor={service.backgroundColor}
         >
           <ImageContainer
             src={service.image}
@@ -43,12 +43,17 @@ export default function Page() {
           />
 
           <TextContent
+            titleShadow={service.titleShadow}
             title={service.title}
             content={service.content}
             titleSize="clamp(2rem, 6vw, 4rem)"
             contentSize="clamp(1rem, 2.2vw, 1.2rem)"
-            titleWeight={700}
-            contentWeight={400}
+            titleWeight={service.titleWeight}
+            titleColor={service.titleColor}
+            titleFont={service.titleFont}
+            contentWeight={service.contentWeight}
+            contentColor={service.contentColor}
+            contentFont={service.contentFont}
           />
         </ContentSection>
       ))}

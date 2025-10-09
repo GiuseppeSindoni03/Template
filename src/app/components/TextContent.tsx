@@ -14,6 +14,7 @@ type TextContentProps = {
   contentSize: string;
   titleColor?: string;
   contentColor?: string;
+  titleShadow?: string;
 };
 
 export default function TextContent({
@@ -31,6 +32,9 @@ export default function TextContent({
         fw={titleWeight}
         c={props.titleColor}
         className={`${styles.title} ${titleFont}`}
+        style={{
+          textShadow: props.titleShadow,
+        }}
       >
         {props.title}
       </Title>

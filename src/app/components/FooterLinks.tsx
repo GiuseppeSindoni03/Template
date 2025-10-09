@@ -12,6 +12,8 @@ import { usePathname, useRouter } from "next/navigation";
 
 export type FooterProps = {
   logo: string;
+  logoWidth?: number;
+  logoHeight?: number;
   address: string;
   phone: string;
   email: string;
@@ -21,15 +23,15 @@ export type FooterProps = {
   backgroundColor?: string;
   labelFont?: string;
   labelColor?: string;
-  labelWeight?: string;
+  labelWeight?: number;
   contentFont?: string;
   contentColor?: string;
-  contentWeight?: string;
+  contentWeight?: number;
   titleColor?: string;
   titleFont?: string;
-  titleWeight?: string;
+  titleWeight?: number;
   linkFont?: string;
-  linkWeight?: string;
+  linkWeight?: number;
   linkColor?: string;
 };
 
@@ -72,13 +74,15 @@ export default function FooterLinks(props: FooterProps) {
     <Box
       id="footer"
       className={styles.container}
-      style={{ backgroundColor: "#293132" }}
+      style={{ backgroundColor: props.backgroundColor }}
     >
       <Stack>
         <Image
           alt="logo"
           className={styles.logo}
           src={props.logo || "logoIpsum.svg"}
+          w={props.logoWidth}
+          h={props.logoHeight}
         />
 
         <Group>
@@ -156,9 +160,11 @@ export default function FooterLinks(props: FooterProps) {
 
       <Stack className={styles.workSchedule}>
         <Title
-          className={styles.workScheduleTitle}
-          c="white"
-        >{`ORARI DI APERTURA`}</Title>
+          className={`${styles.workScheduleTitle} ${props.labelFont}`}
+          c={props.labelColor}
+        >
+          ORARI DI APERTURA
+        </Title>
         {props.workSchedule.map((shift, index) => (
           <div key={index} className={styles.workScheduleDays}>
             <Text
@@ -172,6 +178,7 @@ export default function FooterLinks(props: FooterProps) {
               className={props.contentFont}
               c={props.contentColor}
               fw={props.contentWeight}
+              // ta={"left"}
             >
               {shift}
             </Text>
