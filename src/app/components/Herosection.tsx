@@ -3,6 +3,7 @@
 import { Box } from "@mantine/core";
 import ImageCarousel from "./ImageCarousel";
 import { SlideData } from "@/types/slideData";
+import styles from "../style/herosection.module.css";
 
 type HeroParameter = {
   slides: SlideData[];
@@ -12,15 +13,7 @@ type HeroParameter = {
 
 export default function HeroSection(heroParameter: HeroParameter) {
   return (
-    <Box
-      id={heroParameter.id}
-      component="section"
-      style={{
-        width: "100%",
-        position: "relative",
-        // border: "1px solid black",
-      }}
-    >
+    <Box className={styles.container} id={heroParameter.id} component="section">
       <ImageCarousel scrollable slides={heroParameter.slides} />
     </Box>
   );

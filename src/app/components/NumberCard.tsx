@@ -3,7 +3,7 @@ import CountUp from "./CountUp";
 import styles from "../style/numberCard.module.css";
 import { inter } from "@/theme/fonts";
 
-type NumberCardProps = {
+export type NumberCardProps = {
   symbol?: string;
   from: number;
   to: number;
@@ -14,6 +14,10 @@ type NumberCardProps = {
   minHeight?: string | number;
   numberColor?: string;
   labelColor?: string;
+  numberFont?: string;
+  labelFont?: string;
+  numberWeight?: string;
+  labelWeight?: string;
   backgroundColor?: string;
 };
 
@@ -30,22 +34,22 @@ export default function NumberCard(props: NumberCardProps) {
         <Card.Section>
           <Box className={styles.section}>
             <Title
-              className={styles.symbol}
+              className={`${styles.symbol} ${props.numberFont}`}
               c={props.numberColor}
               order={6}
               // size="clamp(0.875rem, 2.5vw, 2rem)"
               size="clamp(2em, 3vw, 2rem)"
-              fw={900}
+              fw={props.numberWeight || 900}
             >
               {props.symbol}
             </Title>
 
             <Title
-              className={styles.label}
+              className={`${styles.label} ${props.numberFont}`}
               c={props.numberColor}
               order={6}
               size="clamp(4em, 5vw, 4rem)"
-              fw={900}
+              fw={props.numberWeight || 900}
             >
               <CountUp from={props.from} to={props.to} />
             </Title>
@@ -56,9 +60,9 @@ export default function NumberCard(props: NumberCardProps) {
           <Title
             order={6}
             c={props.labelColor}
-            className={`${styles.labelText} ${inter.className}`}
+            className={`${styles.labelText} ${props.labelFont}`}
             size="clamp(1.5em, 1.5vw, 1rem)"
-            fw={300}
+            fw={props.labelWeight || 300}
             ta="center"
           >
             {props.label.toUpperCase()}

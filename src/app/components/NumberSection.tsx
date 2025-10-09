@@ -1,10 +1,12 @@
 import { Box, Space, Title } from "@mantine/core";
-import NumberCard from "./NumberCard";
+import NumberCard, { NumberCardProps } from "./NumberCard";
 import styles from "../style/numberSection.module.css";
 
-type NumberSectionProps = {
-  numbers: NumberCardType[];
+export type NumberSectionProps = {
+  numbers: NumberCardProps[];
   titleColor?: string;
+  titleFont?: string;
+  titleWeight?: string;
 };
 
 export default function NumberSection(props: NumberSectionProps) {
@@ -28,9 +30,13 @@ export default function NumberSection(props: NumberSectionProps) {
         {props.numbers.map(
           (number, index) => (
             <NumberCard
-              labelColor={number.cardLabelColor}
-              numberColor={number.cardNumberColor}
+              labelColor={number.labelColor}
+              numberColor={number.numberColor}
               backgroundColor={number.backgroundColor}
+              labelFont={number.labelFont}
+              labelWeight={number.labelWeight}
+              numberFont={number.numberFont}
+              numberWeight={number.numberWeight}
               label={number.label}
               from={number.from}
               to={number.to}

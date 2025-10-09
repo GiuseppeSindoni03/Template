@@ -75,12 +75,16 @@
 }
 /* Responsive */
 @media (max-width: 768px) {
-  .carousel {
-    height: "100%";
+  .slideContainer {
+    height: 65vh;
+    min-height: 400px;
+    max-height: 600px;
   }
+
   .slideImage {
-    height: "100%";
-    min-height: 300px;
+    height: 100%;
+    min-height: 400px;
+    max-height: 600px;
   }
 
   .overlay {

@@ -15,9 +15,14 @@ type CSSVarProps = React.CSSProperties & {
   ["--cs-pad-small"]?: string | number;
 };
 
-type InterludeProps = {
+export type InterludeProps = {
+  title?: string;
+  titleColor?: string;
+  titleFont?: string;
+  titleWeight?: string;
+  titleShadow?: string;
   id?: string;
-  children: ReactNode;
+  children?: ReactNode;
   padding?: string | number;
   gap?: string | number;
   maxWidth?: string | number;

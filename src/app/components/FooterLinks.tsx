@@ -18,6 +18,19 @@ export type FooterProps = {
   social: { instagram?: string; facebook?: string; tiktok: string };
   workSchedule: string[];
   links: { label: string; link: string; scrollTo: string }[];
+  backgroundColor?: string;
+  labelFont?: string;
+  labelColor?: string;
+  labelWeight?: string;
+  contentFont?: string;
+  contentColor?: string;
+  contentWeight?: string;
+  titleColor?: string;
+  titleFont?: string;
+  titleWeight?: string;
+  linkFont?: string;
+  linkWeight?: string;
+  linkColor?: string;
 };
 
 const week = [
@@ -62,21 +75,51 @@ export default function FooterLinks(props: FooterProps) {
       style={{ backgroundColor: "#293132" }}
     >
       <Stack>
-        <Image alt="logo" className={styles.logo} src="logoIpsumBlack.svg" />
+        <Image
+          alt="logo"
+          className={styles.logo}
+          src={props.logo || "logoIpsum.svg"}
+        />
 
         <Group>
-          <Text c={"white"}>{props.address}</Text>
+          <Text
+            className={props.contentFont}
+            c={props.contentColor}
+            fw={props.contentWeight}
+          >
+            {props.address}
+          </Text>
         </Group>
         <Group>
-          <Text c={"#FCBA04"}>Telefono</Text>{" "}
-          <Text className={styles.text} c={"white"}>
+          <Text
+            className={props.labelFont}
+            c={props.labelColor}
+            fw={props.labelWeight}
+          >
+            Telefono
+          </Text>
+          <Text
+            className={props.contentFont}
+            c={props.contentColor}
+            fw={props.contentWeight}
+          >
             {props.phone}
           </Text>
         </Group>
 
         <Group>
-          <Text c={"#FCBA04"}>Email</Text>{" "}
-          <Text className={styles.text} c={"white"}>
+          <Text
+            className={props.labelFont}
+            c={props.labelColor}
+            fw={props.labelWeight}
+          >
+            Email
+          </Text>
+          <Text
+            className={props.contentFont}
+            c={props.contentColor}
+            fw={props.contentWeight}
+          >
             {props.email}
           </Text>
         </Group>
@@ -118,8 +161,18 @@ export default function FooterLinks(props: FooterProps) {
         >{`ORARI DI APERTURA`}</Title>
         {props.workSchedule.map((shift, index) => (
           <div key={index} className={styles.workScheduleDays}>
-            <Text c={"#FCBA04"}> {week[index]} </Text>
-            <Text className={styles.text} c={"white"}>
+            <Text
+              className={props.labelFont}
+              c={props.labelColor}
+              fw={props.labelWeight}
+            >
+              {week[index]}{" "}
+            </Text>
+            <Text
+              className={props.contentFont}
+              c={props.contentColor}
+              fw={props.contentWeight}
+            >
               {shift}
             </Text>
           </div>
@@ -129,9 +182,13 @@ export default function FooterLinks(props: FooterProps) {
       <Stack className={styles.linkContainer}>
         {props.links.map((link, index) => (
           <Link
+            style={{
+              color: props.linkColor,
+              fontWeight: props.linkWeight,
+            }}
             key={index}
             href={link.link}
-            className={styles.link}
+            className={`${styles.link} ${props.linkFont}`}
             onClick={(e) => {
               handleLinkClick(e, link);
             }}

@@ -46,7 +46,7 @@ export default function LandingPage() {
         padding="3rem"
         gap="2rem"
         minHeight="60vh"
-        backgroundColor={gradients.elegant}
+        backgroundColor={chiSiamo.backgroundColor}
         // border="1px solid blue"
       >
         <ImageContainer
@@ -61,25 +61,30 @@ export default function LandingPage() {
           content={chiSiamo.content}
           titleSize="clamp(2rem, 6vw, 4rem)"
           contentSize="clamp(1rem, 2.2vw, 1.2rem)"
-          titleWeight={700}
-          contentWeight={400}
+          titleWeight={chiSiamo.titleWeight}
+          contentColor={chiSiamo.contentColor}
+          contentFont={chiSiamo.contentFont}
+          titleColor={chiSiamo.titleColor}
+          titleFont={chiSiamo.titleFont}
+          contentWeight={chiSiamo.contentWeight}
         />
       </ContentSection>
 
       <Interlude
         id="specialties"
-        imageSrc={interlude.src}
-        imageAlt="Descrizione immagine"
+        imageSrc={interlude.imageSrc}
+        imageAlt={interlude.imageAlt || "Descrizione immagine"}
         size="lg"
       >
         <Title
           order={6}
-          fw={700}
-          ff={dm_serif.className}
-          c={""}
+          fw={interlude.titleWeight || 700}
+          className={interlude.titleFont}
+          c={interlude.titleColor}
           size="clamp(2rem, 6vw, 4rem)"
           style={{
-            textShadow: "0 2px 8px rgba(0, 0, 0, 0.7)",
+            textShadow:
+              `${interlude.titleShadow}` || "0 2px 8px rgba(0, 0, 0, 0.7)",
             lineHeight: "1.2",
           }}
         >
@@ -120,12 +125,7 @@ export default function LandingPage() {
 
       <Space h={"xl"} />
 
-      <Interlude
-        id="place"
-        // maxWidth={"80%"}
-        backgroundColor="#FCBA04"
-        size="lg"
-      >
+      <Interlude id="place" backgroundColor="#" size="lg">
         <Box className={styles.placeInterlude}>
           <Title
             order={6}

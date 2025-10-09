@@ -5,7 +5,7 @@ import "@mantine/carousel/styles.css";
 import Header from "./components/Header";
 import Providers from "./components/Provider";
 import { Metadata } from "next";
-import { footerInfo, colorConfig } from "@/mock/mock";
+import { footerInfo, colorConfig, header } from "@/mock/mock";
 import FooterLinks from "./components/FooterLinks";
 
 export const metadata: Metadata = {
@@ -85,7 +85,7 @@ export default function RootLayout({
     <html lang="it">
       <body>
         <Providers colorConfig={colorConfig}>
-          <Header logo="logoIpsumBlack.svg" />
+          <Header {...header} />
           {children}
 
           <footer id="footer">

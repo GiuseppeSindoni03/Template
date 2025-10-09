@@ -4,12 +4,11 @@ import { Container } from "@mantine/core";
 import Link from "next/link";
 import styles from "../style/header.module.css";
 import Image from "next/image";
-import { roboto } from "../../theme/fonts";
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { hover } from "motion/react";
+import { links } from "@/mock/mock";
 
-type HeaderProps = {
+export type HeaderProps = {
   logo: string;
   carouselHeight?: number;
   backgroundColor?: string;
@@ -18,27 +17,9 @@ type HeaderProps = {
   linkFont?: string;
   linkWeight?: string;
   hoverColor?: string;
+  logoWidth?: number;
+  logoHeight?: number;
 };
-
-const links = [
-  {
-    label: "Chi siamo",
-    link: "/",
-    scrollTo: "chi-siamo",
-  },
-  { link: "/", label: "Dove trovarci", scrollTo: "place" },
-  {
-    label: "Contatti",
-    link: null,
-    scrollTo: "footer",
-  },
-  {
-    label: "Servizi",
-    link: "/servizi",
-    scrollTo: null,
-  },
-  { link: "/", label: "Specialità", scrollTo: "specialties" },
-];
 
 export default function Header({
   linkColor = "white",
@@ -130,30 +111,62 @@ export default function Header({
     e: React.MouseEvent<HTMLAnchorElement>,
     link: (typeof links)[0]
   ) => {
-    setIsMobileMenuOpen(false);
-
     if (link.scrollTo) {
       e.preventDefault();
 
-      // Se il link è "Contatti" (footer), scrolla sempre sulla pagina corrente
-      if (link.link === null) {
-        document.getElementById(link.scrollTo)?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-        return;
-      }
+      const scrollToElement = () => {
+        const element = document.getElementById(link.scrollTo!);
+        if (element) {
+          // Usa un offset per compensare l'header
+          const headerOffset = 80; // Altezza dell'header
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition =
+            elementPosition + window.scrollY - headerOffset;
 
-      // Siamo già sulla pagina giusta?
-      if (pathname === link.link) {
-        document.getElementById(link.scrollTo)?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      };
+
+      // Se il menu mobile è aperto
+      if (isMobileMenuOpen) {
+        // 1. Prima ripristina lo scroll del body
+        const scrollY = document.body.style.top;
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        document.body.style.overflowY = "";
+
+        // 2. Ripristina la posizione dello scroll
+        const savedScrollPosition = parseInt(scrollY || "0") * -1;
+        window.scrollTo(0, savedScrollPosition);
+
+        // 3. Chiudi il menu
+        setIsMobileMenuOpen(false);
+
+        // 4. Attendi che tutto sia completato, POI scrolla
+        setTimeout(() => {
+          // Se non dobbiamo navigare, scrolla direttamente
+          if (link.link === null || pathname === link.link) {
+            scrollToElement();
+          } else {
+            // Naviga con hash
+            router.push(`${link.link}#${link.scrollTo}`);
+          }
+        }, 300); // Aumentato il delay per dare tempo al browser
       } else {
-        // Naviga con hash nell'URL
-        router.push(`${link.link}#${link.scrollTo}`);
+        // Desktop: comportamento normale
+        if (link.link === null || pathname === link.link) {
+          scrollToElement();
+        } else {
+          router.push(`${link.link}#${link.scrollTo}`);
+        }
       }
+    } else {
+      // Link normale senza scroll
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -200,8 +213,8 @@ export default function Header({
           <Image
             src={props.logo}
             alt="Logo"
-            width={150}
-            height={150}
+            width={props.logoWidth || 150}
+            height={props.logoHeight || 150}
             priority
             className={styles.logoImage}
           />

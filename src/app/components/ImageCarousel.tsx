@@ -53,7 +53,7 @@ export default function ImageCarousel({
       w="100%"
       slideGap="md"
       emblaOptions={{ loop: true }}
-      className={styles.carousel} //gold
+      className={styles.carousel}
       withControls={shouldShowControls && scrollable}
       withIndicators={scrollable}
       classNames={{ control: styles.control, indicator: styles.indicator }}
@@ -76,9 +76,10 @@ export default function ImageCarousel({
               <Box className={styles.overlay}>
                 {slide.title && (
                   <Title
+                    fw={slide.titleWeight}
                     order={1}
-                    c="white"
-                    className={`${styles.mainTitle} ${dm_serif.className}`}
+                    c={slide.titleColor || "white"}
+                    className={`${styles.mainTitle} ${slide.titleFont}`}
                   >
                     {slide.title}
                   </Title>
@@ -88,9 +89,10 @@ export default function ImageCarousel({
                   <>
                     {slide.title && <Space h="xl" />}
                     <Title
+                      fw={slide.textWeight}
                       order={2}
-                      c="white"
-                      className={`${styles.subTitle} ${dm_serif.className}`}
+                      c={slide.textColor || "white"}
+                      className={`${styles.subTitle} ${slide.textFont}`}
                     >
                       {slide.text}
                     </Title>

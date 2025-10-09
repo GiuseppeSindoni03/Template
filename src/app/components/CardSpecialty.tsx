@@ -2,7 +2,7 @@ import { Card, Text, Title, Stack } from "@mantine/core";
 import Image from "next/image";
 import styles from "../style/cardSpecialty.module.css";
 
-type CardProps = {
+export type CardProps = {
   title: string;
   src: string;
   content: string;
