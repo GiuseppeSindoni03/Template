@@ -1,6 +1,6 @@
 "use client";
 
-import { Container } from "@mantine/core";
+import { Box, Container, Space, Title } from "@mantine/core";
 import Link from "next/link";
 import styles from "../style/header.module.css";
 import Image from "next/image";
@@ -19,6 +19,9 @@ export type HeaderProps = {
   hoverColor?: string;
   logoWidth?: number;
   logoHeight?: number;
+  name?: string;
+  nameColor?: string;
+  nameFont?: string;
 };
 
 export default function Header({
@@ -209,16 +212,37 @@ export default function Header({
       className={`${styles.header} ${!isVisible ? styles.hidden : ""}`}
     >
       <Container size="xxl" h={60} className={styles.inner}>
-        <Link href="/" className={styles.logo}>
-          <Image
-            src={props.logo}
-            alt="Logo"
-            width={props.logoWidth || 150}
-            height={props.logoHeight || 150}
-            priority
-            className={styles.logoImage}
-          />
-        </Link>
+        <Box
+          style={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <Link href="/" className={styles.logo}>
+            <Image
+              src={props.logo}
+              alt="Logo"
+              width={props.logoWidth || 150}
+              height={props.logoHeight || 150}
+              priority
+              className={styles.logoImage}
+            />
+          </Link>
+          <Space w={"sm"} />
+          {props?.name && (
+            <Title
+              order={6}
+              className={`${styles.name} ${props.nameFont}`}
+              style={{
+                color: props.nameColor,
+                fontWeight: props.linkWeight,
+              }}
+              c={props.nameColor}
+            >
+              {props.name?.toUpperCase()}
+            </Title>
+          )}
+        </Box>
 
         <button
           className={styles.hamburger}

@@ -44,6 +44,12 @@
   flex-shrink: 0;
 }
 
+
+.name {
+  font-size: 2em;
+}
+
+
 .logoImage {
   display: block;
   width: auto;
