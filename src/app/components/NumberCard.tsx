@@ -24,6 +24,7 @@ export type NumberCardProps = {
 export default function NumberCard(props: NumberCardProps) {
   return (
     <Card
+      bg={props.backgroundColor}
       shadow="xl"
       padding="xl"
       radius="lg"

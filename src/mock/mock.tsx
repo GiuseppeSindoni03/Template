@@ -146,7 +146,7 @@ export const specialtySection = {
 
 export const specialty: CardProps[] = [
   {
-    // backgroundColor: cream,
+    backgroundColor: cream,
     src: "/specialty1.jpg",
     title: "Monaciello",
     content:
@@ -160,7 +160,7 @@ export const specialty: CardProps[] = [
   },
 
   {
-    backgroundColor: "",
+    backgroundColor: cream,
     src: "/specialty2.jpg",
     title: "River Burger",
     content:
@@ -173,7 +173,7 @@ export const specialty: CardProps[] = [
     titleWeight: 500,
   },
   {
-    backgroundColor: "",
+    backgroundColor: cream,
     src: "/specialty3.jpg",
     title: "Nonna Burger",
     content:
@@ -187,7 +187,7 @@ export const specialty: CardProps[] = [
   },
 
   {
-    backgroundColor: "",
+    backgroundColor: cream,
     src: "/specialty3.jpg",
     title: "Nonna Burger",
     content:
@@ -201,7 +201,7 @@ export const specialty: CardProps[] = [
   },
 
   {
-    backgroundColor: "",
+    backgroundColor: cream,
     src: "/specialty3.jpg",
     title: "Nonna Burger",
     content:
@@ -214,7 +214,7 @@ export const specialty: CardProps[] = [
     titleWeight: 500,
   },
   {
-    backgroundColor: "",
+    backgroundColor: cream,
     src: "/specialty3.jpg",
     title: "Nonna Burger",
     content:
@@ -227,7 +227,7 @@ export const specialty: CardProps[] = [
     titleWeight: 500,
   },
   {
-    backgroundColor: "",
+    backgroundColor: cream,
     src: "/specialty3.jpg",
     title: "Nonna Burger",
     content:
@@ -267,7 +267,7 @@ export const numberCards: NumberCardProps[] = [
     labelFont: monteSerrat.className,
     numberWeight: 900,
     labelWeight: 500,
-    backgroundColor: "",
+    backgroundColor: cream,
   },
   {
     label: "Valutazione",
@@ -280,7 +280,7 @@ export const numberCards: NumberCardProps[] = [
     labelFont: monteSerrat.className,
     numberWeight: 900,
     labelWeight: 500,
-    backgroundColor: "",
+    backgroundColor: cream,
   },
 ];
 
