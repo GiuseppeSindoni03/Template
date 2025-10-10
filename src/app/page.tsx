@@ -72,11 +72,13 @@ export default function LandingPage() {
           titleColor={chiSiamo.titleColor}
           titleFont={chiSiamo.titleFont}
           contentWeight={chiSiamo.contentWeight}
+          titleShadow={chiSiamo.titleShadow}
         />
       </ContentSection>
 
       <Interlude
         id="specialties"
+        backgroundColor={interlude.backgroundColor}
         imageSrc={interlude.imageSrc}
         imageAlt={interlude.imageAlt || "Descrizione immagine"}
         size="lg"
@@ -99,7 +101,7 @@ export default function LandingPage() {
       <ContentSection
         // border="1px solid red"
         as="section"
-        backgroundColor={specialtySection.backgroundColor}
+        background={specialtySection.background}
         // maxWidth={"80%"}
         gap={"1em"}
         orientation="horizontal-scroll"

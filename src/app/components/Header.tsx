@@ -15,7 +15,7 @@ export type HeaderProps = {
   borderRadius?: string;
   linkColor?: string;
   linkFont?: string;
-  linkWeight?: string;
+  linkWeight?: number;
   hoverColor?: string;
   logoWidth?: number;
   logoHeight?: number;

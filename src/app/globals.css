@@ -1,10 +1,9 @@
 :root {
   --green-title: #199b63;
-  --yellow-sfondo: #ffd26d;
-  --blue-text: #2265cf;
+  --cream-color: #faf3dd;
   --gray-muted: #6b7280;
-  --hover-color: white;
-  --footer-back: #1f1f1f;
+  --black-color: #030303;
+  --footer-back: #2d2d2d;
 }
 
 .link {

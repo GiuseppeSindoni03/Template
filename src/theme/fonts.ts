@@ -4,6 +4,7 @@ import {
   DM_Serif_Text,
   Erica_One,
   Montserrat,
+  Anton,
 } from "next/font/google";
 
 export const ericaOne = Erica_One({
@@ -22,4 +23,5 @@ export const dm_serif = DM_Serif_Text({
   variable: "--font-dm-serif",
 });
 
+export const anton = Anton({ subsets: ["latin"], weight: "400" });
 export const monteSerrat = Montserrat({ subsets: ["latin"] });

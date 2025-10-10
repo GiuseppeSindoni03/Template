@@ -4,13 +4,13 @@ import { HeaderProps } from "@/app/components/Header";
 import { InterludeProps } from "@/app/components/Interlude";
 import { NumberCardProps } from "@/app/components/NumberCard";
 import { NumberSectionProps } from "@/app/components/NumberSection";
-import { ColorConfig, shadows } from "@/theme/colors";
-import { ericaOne, monteSerrat } from "@/theme/fonts";
+import { ColorConfig, gradients, shadows } from "@/theme/colors";
+import { anton, monteSerrat } from "@/theme/fonts";
 import { SlideData } from "@/types/slideData";
 
 const green = "var(--green-title)";
-const yellow = "var(--yellow-sfondo)";
-const blue = "var(--blue-text)";
+const cream = "var(--cream-color)";
+const black = "var(--black-color)";
 const footer = "var(--footer-back)";
 
 export const colorConfig: ColorConfig = {
@@ -41,14 +41,14 @@ export const links = [
 
 export const header: HeaderProps = {
   logo: "/logoGrrinta.png",
-  logoWidth: 70,
-  logoHeight: 70,
-  backgroundColor: "",
-  borderRadius: "",
+  logoWidth: 60,
+  logoHeight: 60,
+  backgroundColor: "rgba(0, 0, 0, 0.3)",
+  // borderRadius: "30px",
   hoverColor: "white",
   linkColor: green,
-  linkFont: ericaOne.className,
-  // linkWeight: "100",
+  linkFont: anton.className,
+  linkWeight: 100,
 };
 
 // SLIDE CAROSELLO
@@ -56,15 +56,14 @@ export const slides: SlideData[] = [
   {
     id: "hero-1",
     src: "/foto1.jpg",
-
     title: " Un F*CKING GRRREAT BURGER",
     text: " made in Volla!",
     alt: "",
-    textColor: blue,
-    textFont: ericaOne.className,
+    textColor: green,
+    textFont: anton.className,
     textWeight: 200,
     titleColor: "white",
-    titleFont: ericaOne.className,
+    titleFont: anton.className,
     titleWeight: 200,
   },
   {
@@ -73,11 +72,11 @@ export const slides: SlideData[] = [
     title: " Un F*CKING GRRREAT BURGER",
     text: " made in Volla!",
     alt: "",
-    textColor: blue,
-    textFont: ericaOne.className,
+    textColor: green,
+    textFont: anton.className,
     textWeight: 200,
     titleColor: "white",
-    titleFont: ericaOne.className,
+    titleFont: anton.className,
     titleWeight: 200,
   },
   {
@@ -86,11 +85,11 @@ export const slides: SlideData[] = [
     title: " Un F*CKING GRRREAT BURGER",
     text: " made in Volla!",
     alt: "",
-    textColor: blue,
-    textFont: ericaOne.className,
+    textColor: green,
+    textFont: anton.className,
     textWeight: 200,
     titleColor: "white",
-    titleFont: ericaOne.className,
+    titleFont: anton.className,
     titleWeight: 10,
   },
 ];
@@ -103,48 +102,49 @@ export const chiSiamo = {
   content:
     "Da tre generazioni portiamo in tavola il gusto autentico della cucina napoletana. Ogni piatto racconta una storia di famiglia, di ingredienti freschi e di passione per la tradizione. Il nostro ristorante è un luogo dove ci si sente a casa, tra profumi familiari e sorrisi sinceri.",
   orientation: "left" as const,
-  backgroundColor: blue,
+  backgroundColor: cream,
   imageAlt: "Chi siamo",
   titleShadow: shadows.subtle,
 
   titleWeight: 100,
   titleColor: green,
-  titleFont: ericaOne.className,
-  contentColor: "white",
+  titleFont: anton.className,
+  contentColor: footer,
   contentFont: monteSerrat.className,
-  contentWeight: 900,
+  contentWeight: 600,
 };
 
 // INTERLUDE
 export const interlude: InterludeProps = {
   title: "Le nostre specialità",
   // imageSrc: "servizi.jpg",
-  backgroundColor: yellow,
-  titleColor: blue,
+  backgroundColor: black,
+  titleColor: green,
   titleWeight: 100,
-  titleFont: ericaOne.className,
-  titleShadow: shadows.subtle,
+  titleFont: anton.className,
+  titleShadow: shadows.subtleWhite,
 };
 
 // CARD SPECIALTY
 
 export const specialtySection = {
-  backgroundColor: blue,
+  // backgroundColor: gradients.green,
+  background: gradients.green,
 };
 
 export const specialty: CardProps[] = [
   {
-    backgroundColor: "",
+    // backgroundColor: cream,
     src: "/specialty1.jpg",
     title: "Monaciello",
     content:
       "Doppio hamburger smash, chips di zucchine, mousse di provolone del monaco e pancetta croccante",
-    titleFont: ericaOne.className,
+    titleFont: anton.className,
     contentFont: monteSerrat.className,
     titleColor: green,
-    contentColor: "gray",
-    contentWeight: 900,
-    titleWeight: 200,
+    contentColor: footer,
+    contentWeight: 500,
+    titleWeight: 500,
   },
 
   {
@@ -153,12 +153,12 @@ export const specialty: CardProps[] = [
     title: "River Burger",
     content:
       "Bun artigianale, peperonicini verdi, cremoso di pecorino, provola affumicata, guanciale croccante",
-    titleFont: ericaOne.className,
+    titleFont: anton.className,
     contentFont: monteSerrat.className,
     titleColor: "var(--green-title)",
-    contentColor: "gray",
-    contentWeight: 900,
-    titleWeight: 200,
+    contentColor: footer,
+    contentWeight: 500,
+    titleWeight: 500,
   },
   {
     backgroundColor: "",
@@ -166,26 +166,12 @@ export const specialty: CardProps[] = [
     title: "Nonna Burger",
     content:
       "Bun artigianale, salsa al ragù, polpette della nonna, parmigiana croccante con prosciutto e provola",
-    titleFont: ericaOne.className,
+    titleFont: anton.className,
     contentFont: monteSerrat.className,
     titleColor: "var(--green-title)",
-    contentColor: "gray",
-    contentWeight: 900,
-    titleWeight: 200,
-  },
-
-  {
-    backgroundColor: "",
-    src: "/specialty3.jpg",
-    title: "Nonna Burger",
-    content:
-      "Bun artigianale, salsa al ragù, polpette della nonna, parmigiana croccante con prosciutto e provola",
-    titleFont: ericaOne.className,
-    contentFont: monteSerrat.className,
-    titleColor: "var(--green-title)",
-    contentColor: "gray",
-    contentWeight: 900,
-    titleWeight: 200,
+    contentColor: footer,
+    contentWeight: 500,
+    titleWeight: 500,
   },
 
   {
@@ -194,12 +180,26 @@ export const specialty: CardProps[] = [
     title: "Nonna Burger",
     content:
       "Bun artigianale, salsa al ragù, polpette della nonna, parmigiana croccante con prosciutto e provola",
-    titleFont: ericaOne.className,
+    titleFont: anton.className,
     contentFont: monteSerrat.className,
     titleColor: "var(--green-title)",
-    contentColor: "gray",
-    contentWeight: 900,
-    titleWeight: 200,
+    contentColor: footer,
+    contentWeight: 500,
+    titleWeight: 500,
+  },
+
+  {
+    backgroundColor: "",
+    src: "/specialty3.jpg",
+    title: "Nonna Burger",
+    content:
+      "Bun artigianale, salsa al ragù, polpette della nonna, parmigiana croccante con prosciutto e provola",
+    titleFont: anton.className,
+    contentFont: monteSerrat.className,
+    titleColor: "var(--green-title)",
+    contentColor: footer,
+    contentWeight: 500,
+    titleWeight: 500,
   },
   {
     backgroundColor: "",
@@ -207,12 +207,12 @@ export const specialty: CardProps[] = [
     title: "Nonna Burger",
     content:
       "Bun artigianale, salsa al ragù, polpette della nonna, parmigiana croccante con prosciutto e provola",
-    titleFont: ericaOne.className,
+    titleFont: anton.className,
     contentFont: monteSerrat.className,
     titleColor: "var(--green-title)",
-    contentColor: "gray",
-    contentWeight: 900,
-    titleWeight: 200,
+    contentColor: footer,
+    contentWeight: 500,
+    titleWeight: 500,
   },
   {
     backgroundColor: "",
@@ -220,12 +220,12 @@ export const specialty: CardProps[] = [
     title: "Nonna Burger",
     content:
       "Bun artigianale, salsa al ragù, polpette della nonna, parmigiana croccante con prosciutto e provola",
-    titleFont: ericaOne.className,
+    titleFont: anton.className,
     contentFont: monteSerrat.className,
     titleColor: "var(--green-title)",
-    contentColor: "gray",
-    contentWeight: 900,
-    titleWeight: 200,
+    contentColor: footer,
+    contentWeight: 500,
+    titleWeight: 500,
   },
 ];
 
@@ -236,25 +236,25 @@ export const numberCards: NumberCardProps[] = [
     from: 0,
     to: 9,
     symbol: "+",
-    numberColor: blue,
-    labelColor: blue,
+    numberColor: green,
+    labelColor: green,
     numberFont: monteSerrat.className,
     labelFont: monteSerrat.className,
     numberWeight: 900,
-    labelWeight: 400,
-    backgroundColor: "",
+    labelWeight: 500,
+    backgroundColor: cream,
   },
   {
     label: "Dipendenti",
     from: 0,
     to: 33,
     symbol: "+",
-    numberColor: blue,
-    labelColor: blue,
+    numberColor: green,
+    labelColor: green,
     numberFont: monteSerrat.className,
     labelFont: monteSerrat.className,
     numberWeight: 900,
-    labelWeight: 400,
+    labelWeight: 500,
     backgroundColor: "",
   },
   {
@@ -262,20 +262,20 @@ export const numberCards: NumberCardProps[] = [
     from: 0,
     to: 92,
     symbol: "%",
-    numberColor: blue,
-    labelColor: blue,
+    numberColor: green,
+    labelColor: green,
     numberFont: monteSerrat.className,
     labelFont: monteSerrat.className,
     numberWeight: 900,
-    labelWeight: 400,
+    labelWeight: 500,
     backgroundColor: "",
   },
 ];
 
 export const numberSection: NumberSectionProps = {
   numbers: numberCards,
-  titleColor: yellow,
-  titleFont: ericaOne.className,
+  titleColor: cream,
+  titleFont: anton.className,
   titleWeight: 100,
   backgroundColor: green,
   titleShadow: shadows.subtle,
@@ -284,10 +284,10 @@ export const numberSection: NumberSectionProps = {
 export const doveTrovarci: InterludeProps = {
   title: "Dove trovarci",
   // imageSrc: "servizi.jpg",
-  backgroundColor: yellow,
-  titleColor: blue,
-  titleWeight: 100,
-  titleFont: ericaOne.className,
+  backgroundColor: cream,
+  titleColor: green,
+  titleWeight: 500,
+  titleFont: anton.className,
   titleShadow: shadows.subtle,
   labelColor: green,
   label: "Via Aldo Moro, 3/A, 80040 Volla NA",
@@ -306,14 +306,14 @@ export const services = [
     content:
       "Nel nostro fast food, puoi gustare i tuoi piatti preferiti comodamente seduto al tavolo. Dimentica la fretta, prenditi il tempo di assaporare ogni morso in un ambiente accogliente. Perfetto per una pausa pranzo o una cena veloce, senza rinunciare al comfort. Vieni a mangiare al tavolo e goditi un'ottima esperienza gastronomica!",
     orientation: "left" as const,
-    backgroundColor: yellow,
+    backgroundColor: cream,
     imageAlt: "party",
     titleWeight: 100,
     titleColor: green,
-    titleFont: ericaOne.className,
-    contentColor: "white",
+    titleFont: anton.className,
+    contentColor: footer,
     contentFont: monteSerrat.className,
-    contentWeight: 900,
+    contentWeight: 500,
   },
   {
     titleShadow: shadows.subtle,
@@ -324,14 +324,14 @@ export const services = [
     content:
       "Non vuoi uscire? Nessun problema! Abbiamo anche il servizio delivery tramite le migliori piattaforme. Ordina comodamente da casa e ricevi il tuo pasto direttamente a domicilio!",
     orientation: "right" as const,
-    backgroundColor: blue,
+    backgroundColor: cream,
     imageAlt: "delivery",
     titleWeight: 100,
     titleColor: green,
-    titleFont: ericaOne.className,
-    contentColor: "white",
+    titleFont: anton.className,
+    contentColor: footer,
     contentFont: monteSerrat.className,
-    contentWeight: 900,
+    contentWeight: 500,
   },
   {
     titleShadow: shadows.subtle,
@@ -341,14 +341,14 @@ export const services = [
     content:
       "Se preferisci mangiare a casa, il nostro fast food offre il servizio d'asporto! Ordina i tuoi piatti preferiti e portali via in pochi minuti, pronti da gustare dove vuoi",
     orientation: "left" as const,
-    backgroundColor: green,
+    backgroundColor: cream,
     imageAlt: "party",
     titleWeight: 100,
-    titleColor: yellow,
-    titleFont: ericaOne.className,
-    contentColor: "white",
+    titleColor: green,
+    titleFont: anton.className,
+    contentColor: footer,
     contentFont: monteSerrat.className,
-    contentWeight: 900,
+    contentWeight: 500,
   },
 ];
 
@@ -364,7 +364,7 @@ export const servicesSlide: SlideData[] = [
     textFont: "",
     // textWeight: "",
     titleColor: green,
-    titleFont: ericaOne.className,
+    titleFont: anton.className,
 
     // titleWeight: "",
   },
@@ -373,10 +373,10 @@ export const servicesSlide: SlideData[] = [
     title: "I nostri servizi",
     alt: "",
     // textColor: green,
-    // textFont: ericaOne.className,
+    // textFont: anton.className,
     // textWeight: "",
-    titleColor: blue,
-    titleFont: ericaOne.className,
+    titleColor: green,
+    titleFont: anton.className,
     // titleWeight: "",
   },
   {
@@ -386,8 +386,8 @@ export const servicesSlide: SlideData[] = [
     textColor: "",
     textFont: "",
     // textWeight: "",
-    titleColor: yellow,
-    titleFont: ericaOne.className,
+    titleColor: green,
+    titleFont: anton.className,
     // titleWeight: "",
   },
 ];
@@ -397,20 +397,20 @@ export const footerInfo: FooterProps = {
   logo: "/logoGrrinta.png",
   logoWidth: 150,
   logoHeight: 150,
-  contentColor: "white",
+  contentColor: cream,
   contentFont: monteSerrat.className,
   contentWeight: 0,
   labelColor: green,
   labelFont: monteSerrat.className,
   labelWeight: 700,
-  linkColor: "white",
+  linkColor: cream,
   linkFont: monteSerrat.className,
   linkWeight: 900,
   titleColor: green,
   titleFont: monteSerrat.className,
   titleWeight: 900,
 
-  backgroundColor: footer,
+  backgroundColor: black,
   address: "Via Aldo Moro, 3/A, 80040 Volla NA",
   email: "example.gmail.com",
   phone: "0812787077",

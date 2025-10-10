@@ -150,7 +150,7 @@ export default function Interlude({
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              backgroundColor: "var(--yellow-sfondo)",
+              backgroundColor: backgroundColor,
             }}
           />
         )}
