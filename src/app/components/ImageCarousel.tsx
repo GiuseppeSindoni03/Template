@@ -2,22 +2,36 @@
 
 import { SlideData } from "@/types/slideData";
 import { Carousel } from "@mantine/carousel";
-import { Box, Title, Space, Image } from "@mantine/core";
+import { Box, Title, Space, Image, Button } from "@mantine/core";
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useRef, useState } from "react";
 import { dm_serif } from "../../theme/fonts";
 import styles from "../style/imageCarousel.module.css";
+import { m } from "motion/react";
 
 type ImageCarouselProps = {
   slides?: SlideData[];
   scrollable?: boolean;
+  menu?: {
+    menuLink: string;
+    linkColor: string;
+    backgroundColor: string;
+    font: string;
+  };
 };
 
 export default function ImageCarousel({
   slides,
   scrollable,
+  menu,
 }: ImageCarouselProps) {
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
+
+  const handleClickMenu = () => {
+    console.log("Ciao bello");
+
+    window.open(menu?.menuLink, "_blank", "noopener,noreferrer");
+  };
 
   useEffect(() => {
     const checkMobile = () => {
@@ -85,17 +99,28 @@ export default function ImageCarousel({
                   </Title>
                 )}
 
-                {slide.text && (
+                {menu && (
                   <>
                     {slide.title && <Space h="xl" />}
-                    <Title
-                      fw={slide.textWeight}
-                      order={2}
-                      c={slide.textColor || "white"}
-                      className={`${styles.subTitle} ${slide.textFont}`}
+                    <Button
+                      onClick={handleClickMenu}
+                      className={styles.menuButton}
+                      style={{
+                        backgroundColor: menu.backgroundColor,
+                      }}
+                      size={isMobile ? "md" : "lg"}
                     >
-                      {slide.text}
-                    </Title>
+                      <Title
+                        fw={slide.textWeight}
+                        order={2}
+                        c={menu.linkColor || slide.textColor || "white"}
+                        className={`${styles.buttonText} ${
+                          menu.font || slide.textFont
+                        }`}
+                      >
+                        SCOPRI IL MENÙ
+                      </Title>
+                    </Button>
                   </>
                 )}
               </Box>

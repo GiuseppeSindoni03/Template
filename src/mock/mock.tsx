@@ -51,13 +51,25 @@ export const header: HeaderProps = {
   linkWeight: 100,
 };
 
+export const menu: {
+  menuLink: string;
+  linkColor: string;
+  backgroundColor: string;
+  font: string;
+} = {
+  menuLink:
+    "https://drive.google.com/file/d/11nklflHGNQIcNhz7RXeu88poWe5A00PR/view",
+  linkColor: green,
+  backgroundColor: cream,
+  font: anton.className,
+};
 // SLIDE CAROSELLO
 export const slides: SlideData[] = [
   {
     id: "hero-1",
     src: "/foto1.jpg",
     title: " Un F*CKING GRRREAT BURGER",
-    text: " made in Volla!",
+
     alt: "",
     textColor: green,
     textFont: anton.className,
@@ -288,11 +300,11 @@ export const doveTrovarci: InterludeProps = {
   titleColor: green,
   titleWeight: 500,
   titleFont: anton.className,
-  titleShadow: shadows.subtle,
+  // titleShadow: shadows.subtle,
   labelColor: green,
   label: "Via Aldo Moro, 3/A, 80040 Volla NA",
   labelFont: monteSerrat.className,
-  // labelShadow: shadows.subtle,
+  // labelShadow: shadows.subtle,PPi
   labelWeight: 900,
 };
 
